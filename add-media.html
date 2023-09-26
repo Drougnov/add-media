@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="https://fs.codelinden.com/wp-content/plugins/fansocial/assets/css/popup-styles.css">
     <script defer="" src="https://fs.codelinden.com/wp-content/plugins/fansocial/assets/js/popup-scripts.js"></script>
 
+    <!-- lightgallery style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css" integrity="sha512-F2E+YYE1gkt0T5TVajAslgDfTEUQKtlu4ralVq78ViNxhKXQLrgQLLie8u1tVdG2vWnB3ute4hcdbiBtvJQh0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-thumbnail.min.css" integrity="sha512-GRxDpj/bx6/I4y6h2LE5rbGaqRcbTu4dYhaTewlS8Nh9hm/akYprvOTZD7GR+FRCALiKfe8u1gjvWEEGEtoR6g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-video.min.css" integrity="sha512-89gDQOHnYjji90NPJ7+M5tgA/0E+fjL4KuSFhi6tjH6sZ54yUEogPMmOAgbI599fW1CtCyrsJbch8k/QzuoXzw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
     <title>Add Media</title>
 </head>
 <body>
@@ -86,7 +91,110 @@
 
                                 <div class="step-container step-container-2">
                                     <h2>Step 2</h2>
-                                    <div class="step-feature-container"></div>
+                                    <div class="step-feature-container">
+                                        <form action="">
+                                            <!-- image -->
+                                            <div data-upload-id="1009" class="upload-container" data-max="1" data-max-size="10" data-allowed-types="image/jpeg,image/png" data-uid="123456789" data-resize="1" data-compress="1" data-name="gallery-image-a">
+                                                <!-- Hidden input for selecting image files -->
+                                                <input type="file" class="file-upload" accept="image/*" style="display: none">
+                                                <!-- Button for selecting image files -->
+                                                <button class="upload-button UJQCM">Select Image</button>
+                                                <!-- Message for instructions and file details -->
+                                                <p class="upload-msg">
+                                                    Click the "Select Image" button or drag and drop a single image here
+                                                    (Max size: <span class="max-size">10MB</span>). Allowed formats:
+                                                    <span class="allowed-formats">JPEG, PNG</span>
+                                                </p>
+                                                <!-- Progress bar for file upload -->
+                                                <div class="progress hidden">
+                                                    <div class="progrss-circle"></div>
+                                                    <div class="progressbar-status">Uploading...</div>
+                                                </div>
+                                                <!-- File list container -->
+                                                <div class="file-list"></div>
+                                                <!-- Response container for processed files -->
+                                                <div class="process_response sortable-container"></div>
+                                                <!-- Hidden input to store the selected image -->
+                                                <input type="hidden" name="selection" class="selection">
+                                                <!-- Hidden upload button -->
+                                                <div class="upload" style="display: none">
+                                                    <button class="upload-files UJQCM">Upload</button>
+                                                </div>
+                                            </div>
+
+                                            <!-- gallery -->
+                                            <div data-upload-id="2" class="upload-container" data-max="5" data-max-size="10" data-allowed-types="image/jpeg,image/png" data-uid="123456789" data-resize="1" data-compress="1" data-name="gallery-image-ab">
+                                                <!-- Hidden input for selecting multiple image files -->
+                                                <input type="file" class="file-upload" accept="image/*" multiple="" style="display: none">
+                                                <!-- Button for selecting multiple image files -->
+                                                <button class="upload-button UJQCM">Select Images</button>
+                                                <!-- Message for instructions and file details -->
+                                                <p class="upload-msg">
+                                                    Click the "Select Image" button or drag and drop a single image here
+                                                    (Max size: <span class="max-size">10MB</span>). Allowed formats:
+                                                    <span class="allowed-formats">JPEG, PNG</span>
+                                                </p>
+                                                <!-- Progress bar for file upload -->
+                                                <div class="progress hidden">
+                                                    <div class="progrss-circle"></div>
+                                                    <div class="progressbar-status">Uploading...</div>
+                                                </div>
+                                                <!-- File list container -->
+                                                <div class="file-list"></div>
+                                                <!-- Response container for processed files with sorting and selecting options -->
+                                                <div class="process_response sortable-container" data-sortable="1" data-select="1"></div>
+                                                <!-- Hidden input to store the selected images -->
+                                                <input type="hidden" name="selection" class="selection">
+                                                <!-- Hidden upload button -->
+                                                <div class="upload" style="display: none">
+                                                    <button class="upload-file UJQCM">Upload</button>
+                                                </div>
+                                            </div>
+
+                                            <!-- videos -->
+                                            <div data-upload-id="3" class="upload-container" data-max="1" data-max-size="100" data-allowed-types="video/mp4,video/x-msvideo,video/quicktime,video/x-matroska,video/x-ms-wmv,video/webm,video/ogg,image/jpeg,image/png" data-uid="123456789" data-trimming="1" data-thumbnail="1" data-convert="1" data-name="primary-video-abc">
+                                                <!-- Hidden input for selecting video files -->
+                                                <input type="file" class="file-upload" accept="video/mp4,video/x-msvideo,video/quicktime,video/x-matroska,video/x-ms-wmv,video/webm,video/ogg" style="display: none">
+                                                <!-- Button for selecting video files -->
+                                                <button class="upload-button UJQCM">Select Video</button>
+                                                <!-- Message for instructions and file details -->
+                                                <p class="upload-msg">
+                                                    Click the "Select Video" button or drag and drop a single image here
+                                                    (Max size: <span class="max-size">100MB</span>). Allowed formats:
+                                                    <span class="allowed-formats">MP4, AVI, QUICKTIME, X-MATROSKA, X-MS-WMV, WEBM, OGG, JPEG, PNG</span>
+                                                </p>
+                                                <!-- Progress bar for file upload -->
+                                                <div class="progress hidden">
+                                                    <div class="progrss-circle"></div>
+                                                    <div class="progressbar-status">Uploading...</div>
+                                                </div>
+                                                <!-- File list container -->
+                                                <div class="file-list"></div>
+                                                <!-- Response container for processed files with selecting options -->
+                                                <div class="process_response" data-select="1"></div>
+                                                <!-- Hidden input to store the selected video -->
+                                                <input type="hidden" name="selection" class="selection">
+                                                
+                                                <!-- Hidden upload button -->
+                                                <div class="upload" style="display: none">
+                                                    <button class="upload-files UJQCM">Upload</button>
+                                                </div>
+                                                <!-- Hidden input and button for uploading user's own trailer -->
+                                                <input type="file" class="own-file-upload" accept="video/mp4,video/x-msvideo,video/quicktime,video/x-matroska,video/x-ms-wmv,video/webm,video/ogg" style="display: none">
+                                                <button hidden="" name="upload-own" class="upload-own-trailer-input UJQCM">
+                                                    Upload your own trailer
+                                                </button>
+                                                <button class="upload-own-trailer-button UJQCM" hidden="">Upload</button>
+                                                <br>
+                                                <!-- Hidden input and button for uploading user's own trailer -->
+                                                <input type="file" class="own-thumbnail-upload" accept="image/*" style="display: none">
+                                                <button style="margin-top: 10px" name="upload-own" class="upload-own-thumbnail-input UJQCM" hidden="">
+                                                    Upload your own thumbnail
+                                                </button>
+                                                <button class="upload-own-thumbnail-button UJQCM" hidden="">Upload</button>
+                                            </div>
+                                        </form>
+                                    </div>
                                     <div class="step-nav-btn-container">
                                         <button class="step-back-btn UJQCM">Back</button>
                                         <button class="step-next-btn UJQCM">Next</button>
@@ -134,5 +242,27 @@
             </div>
         </div>
     </div>
+
+    <!-- lightgallery scripts for image and video preview -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js" integrity="sha512-dSI4QnNeaXiNEjX2N8bkb16B7aMu/8SI5/rE6NIa3Hr/HnWUO+EAZpizN2JQJrXuvU7z0HTgpBVk/sfGd0oW+w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/thumbnail/lg-thumbnail.min.js" integrity="sha512-Jx+orEb1KJtJ6Ajfshhr7is0zqgUC7H9ylk76KMtB9Ea2WAf/Muyzpe9zvBAYQQQKdAbj+rNYEorsRQLsmRafA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/fullscreen/lg-fullscreen.min.js" integrity="sha512-wUl8rYJugCiHiMm1uyGDqcgkvwoY9paD9vLJzT3e4mwp46yB0cicFVcvzy8N6UpbtQyFlJDBzrQQ3BNL72w1+A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/zoom/lg-zoom.min.js" integrity="sha512-BfC/MaayF9sOZyn1bs1R1P8dEugU7v0j5Qu2FeWVfF/rhKUKZBD9kgNqRNinefIp9zAE7g2KhlwwhMpl5V1jMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/video/lg-video.min.js" integrity="sha512-mjdf6tU1Mksu9Hq2YXfbxdzzYHU7SJYmAsMnrhBf80SkHFvk6eHa2d79JM0q5w5ft5nQyBQ0EMB+XTmnvhcFgA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Sortable Animation library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.13.0/Sortable.min.js"></script>
+
+    <!-- Progressbar Animation library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.0.1/progressbar.min.js" integrity="sha512-CMuWpLFXT32GBKUW/9880UbFC2t/1SkCqRZXSIGXFp9lmmFhBuHP6ENqenghA1qEzN3fHPXGGx0arvs3JQ6MNg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- axios library for making asynchronous HTTP requests -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Custom JavaScript files for different functionalities -->
+    <script async="" type="module" src="https://playground.codelinden.com/files/s3uploadtest/123456789/scripts/index.js"></script>
+    <script async="" type="module" src="https://playground.codelinden.com/files/s3uploadtest/123456789/scripts/imageSortAndSelect.js"></script>
+    <script async="" type="module" src="https://playground.codelinden.com/files/s3uploadtest/123456789/scripts/socket.js"></script>
+    <script async="" type="module" src="https://playground.codelinden.com/files/s3uploadtest/123456789/scripts/lightGallery.js"></script>
 </body>
 </html>

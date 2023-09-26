@@ -55,3 +55,10 @@ h1,h2{
     font-weight: var(--form-label-font-weight);
     margin-bottom: 0.5rem;
 }
+
+.upload-container {
+    border: 2px dashed #aaa;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
