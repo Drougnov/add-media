@@ -12,18 +12,12 @@
 
     <!-- popup style and script -->
     <link rel="stylesheet" href="https://fs.codelinden.com/wp-content/plugins/fansocial/assets/css/popup-styles.css">
-    <script defer="" src="https://fs.codelinden.com/wp-content/plugins/fansocial/assets/js/popup-scripts.js"></script>
-
-    <!-- lightgallery style -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css" integrity="sha512-F2E+YYE1gkt0T5TVajAslgDfTEUQKtlu4ralVq78ViNxhKXQLrgQLLie8u1tVdG2vWnB3ute4hcdbiBtvJQh0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-thumbnail.min.css" integrity="sha512-GRxDpj/bx6/I4y6h2LE5rbGaqRcbTu4dYhaTewlS8Nh9hm/akYprvOTZD7GR+FRCALiKfe8u1gjvWEEGEtoR6g==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-video.min.css" integrity="sha512-89gDQOHnYjji90NPJ7+M5tgA/0E+fjL4KuSFhi6tjH6sZ54yUEogPMmOAgbI599fW1CtCyrsJbch8k/QzuoXzw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-
+    <script src="https://fs.codelinden.com/wp-content/plugins/fansocial/assets/js/popup-scripts.js"></script>
     <title>Add Media</title>
 </head>
 <body>
     <div class="wrapper">
-        <h1>Add Media</h1>
+        <h1 class="wrapper-title">Add Media</h1>
         <button  onclick="initiate_popup({'target': '#add-media-popup', 'overlay_color': 'rgb(0 170 255 / 58%)'});">Upload media</button>
 
         <!-- outer wrapper -->
@@ -31,7 +25,7 @@
             <!-- inner wrapper -->
             <div class="GodhZ gsCWf EJVsl OtrSK CzomY">
                 <!-- container -->
-                <div class="ExGby HruDj">
+                <div class="ExGby HruDj gsCWf zaSgn">
                     <!-- header -->
                     <div class="tSrNa gsCWf EJVsl zsSLy">
                         <h1 class="USKIn">Add Media</h1>
@@ -77,7 +71,7 @@
                                         <label for="upload-method-container">Choose upload method:</label>
                                         <fieldset id="upload-method-container">
                                             <label class="upload-method-label">
-                                                <input type="radio" name="upload_method" required="" class="upload-method-input" value="pay per view">Pay per view</label>
+                                                <input type="radio" name="upload_method" required="" class="upload-method-input" value="pay-per-view">Pay per view</label>
                                             <label class="upload-method-label">
                                                 <input type="radio" name="upload_method" required="" class="upload-method-input" value="subscription">Subscription</label>
                                             <label class="upload-method-label">
@@ -92,9 +86,18 @@
                                 <div class="step-container step-container-2">
                                     <h2>Step 2</h2>
                                     <div class="step-feature-container">
+                                        <div class="form-field media-type-container">
+                                            <label for="media-type">Select media type:</label>
+                                            <select name="media-type" id="media-type" required="" aria-required="true" aria-label="media-type" aria-describedby="select media type ">
+                                                <option value="image">Image</option>
+                                                <option value="gallery">Gallery Image</option>
+                                                <option value="video">Video</option>
+                                            </select>
+                                        </div>
+
                                         <form action="">
                                             <!-- image -->
-                                            <div data-upload-id="1009" class="upload-container" data-max="1" data-max-size="10" data-allowed-types="image/jpeg,image/png" data-uid="123456789" data-resize="1" data-compress="1" data-name="gallery-image-a">
+                                            <div data-upload-id="1009" class="upload-container upload-container-image" data-max="1" data-max-size="10" data-allowed-types="image/jpeg,image/png" data-uid="123456789" data-resize="1" data-compress="1" data-name="gallery-image-a">
                                                 <!-- Hidden input for selecting image files -->
                                                 <input type="file" class="file-upload" accept="image/*" style="display: none">
                                                 <!-- Button for selecting image files -->
@@ -105,25 +108,10 @@
                                                     (Max size: <span class="max-size">10MB</span>). Allowed formats:
                                                     <span class="allowed-formats">JPEG, PNG</span>
                                                 </p>
-                                                <!-- Progress bar for file upload -->
-                                                <div class="progress hidden">
-                                                    <div class="progrss-circle"></div>
-                                                    <div class="progressbar-status">Uploading...</div>
-                                                </div>
-                                                <!-- File list container -->
-                                                <div class="file-list"></div>
-                                                <!-- Response container for processed files -->
-                                                <div class="process_response sortable-container"></div>
-                                                <!-- Hidden input to store the selected image -->
-                                                <input type="hidden" name="selection" class="selection">
-                                                <!-- Hidden upload button -->
-                                                <div class="upload" style="display: none">
-                                                    <button class="upload-files UJQCM">Upload</button>
-                                                </div>
                                             </div>
 
                                             <!-- gallery -->
-                                            <div data-upload-id="2" class="upload-container" data-max="5" data-max-size="10" data-allowed-types="image/jpeg,image/png" data-uid="123456789" data-resize="1" data-compress="1" data-name="gallery-image-ab">
+                                            <div data-upload-id="2" class="upload-container upload-container-gallery" data-max="5" data-max-size="10" data-allowed-types="image/jpeg,image/png" data-uid="123456789" data-resize="1" data-compress="1" data-name="gallery-image-ab">
                                                 <!-- Hidden input for selecting multiple image files -->
                                                 <input type="file" class="file-upload" accept="image/*" multiple="" style="display: none">
                                                 <!-- Button for selecting multiple image files -->
@@ -134,25 +122,10 @@
                                                     (Max size: <span class="max-size">10MB</span>). Allowed formats:
                                                     <span class="allowed-formats">JPEG, PNG</span>
                                                 </p>
-                                                <!-- Progress bar for file upload -->
-                                                <div class="progress hidden">
-                                                    <div class="progrss-circle"></div>
-                                                    <div class="progressbar-status">Uploading...</div>
-                                                </div>
-                                                <!-- File list container -->
-                                                <div class="file-list"></div>
-                                                <!-- Response container for processed files with sorting and selecting options -->
-                                                <div class="process_response sortable-container" data-sortable="1" data-select="1"></div>
-                                                <!-- Hidden input to store the selected images -->
-                                                <input type="hidden" name="selection" class="selection">
-                                                <!-- Hidden upload button -->
-                                                <div class="upload" style="display: none">
-                                                    <button class="upload-file UJQCM">Upload</button>
-                                                </div>
                                             </div>
 
                                             <!-- videos -->
-                                            <div data-upload-id="3" class="upload-container" data-max="1" data-max-size="100" data-allowed-types="video/mp4,video/x-msvideo,video/quicktime,video/x-matroska,video/x-ms-wmv,video/webm,video/ogg,image/jpeg,image/png" data-uid="123456789" data-trimming="1" data-thumbnail="1" data-convert="1" data-name="primary-video-abc">
+                                            <div data-upload-id="3" class="upload-container upload-container-video" data-max="1" data-max-size="100" data-allowed-types="video/mp4,video/x-msvideo,video/quicktime,video/x-matroska,video/x-ms-wmv,video/webm,video/ogg,image/jpeg,image/png" data-uid="123456789" data-trimming="1" data-thumbnail="1" data-convert="1" data-name="primary-video-abc">
                                                 <!-- Hidden input for selecting video files -->
                                                 <input type="file" class="file-upload" accept="video/mp4,video/x-msvideo,video/quicktime,video/x-matroska,video/x-ms-wmv,video/webm,video/ogg" style="display: none">
                                                 <!-- Button for selecting video files -->
@@ -163,35 +136,6 @@
                                                     (Max size: <span class="max-size">100MB</span>). Allowed formats:
                                                     <span class="allowed-formats">MP4, AVI, QUICKTIME, X-MATROSKA, X-MS-WMV, WEBM, OGG, JPEG, PNG</span>
                                                 </p>
-                                                <!-- Progress bar for file upload -->
-                                                <div class="progress hidden">
-                                                    <div class="progrss-circle"></div>
-                                                    <div class="progressbar-status">Uploading...</div>
-                                                </div>
-                                                <!-- File list container -->
-                                                <div class="file-list"></div>
-                                                <!-- Response container for processed files with selecting options -->
-                                                <div class="process_response" data-select="1"></div>
-                                                <!-- Hidden input to store the selected video -->
-                                                <input type="hidden" name="selection" class="selection">
-                                                
-                                                <!-- Hidden upload button -->
-                                                <div class="upload" style="display: none">
-                                                    <button class="upload-files UJQCM">Upload</button>
-                                                </div>
-                                                <!-- Hidden input and button for uploading user's own trailer -->
-                                                <input type="file" class="own-file-upload" accept="video/mp4,video/x-msvideo,video/quicktime,video/x-matroska,video/x-ms-wmv,video/webm,video/ogg" style="display: none">
-                                                <button hidden="" name="upload-own" class="upload-own-trailer-input UJQCM">
-                                                    Upload your own trailer
-                                                </button>
-                                                <button class="upload-own-trailer-button UJQCM" hidden="">Upload</button>
-                                                <br>
-                                                <!-- Hidden input and button for uploading user's own trailer -->
-                                                <input type="file" class="own-thumbnail-upload" accept="image/*" style="display: none">
-                                                <button style="margin-top: 10px" name="upload-own" class="upload-own-thumbnail-input UJQCM" hidden="">
-                                                    Upload your own thumbnail
-                                                </button>
-                                                <button class="upload-own-thumbnail-button UJQCM" hidden="">Upload</button>
                                             </div>
                                         </form>
                                     </div>
@@ -203,7 +147,60 @@
 
                                 <div class="step-container step-container-3">
                                     <h2>Step 3</h2>
-                                    <div class="step-feature-container"></div>
+                                    <div class="step-feature-container">
+                                        <div class="form-field product-image">
+                                            <label for="product_image">Thumbnail</label>
+                                            <div data-upload-id="9318693136" class="thumbnail-container single-image-uploader" data-max="1" data-max-size="10" data-allowed-types="image/jpeg,image/png" data-uid="555123456789" data-resize="1" data-compress="1" data-name="product_image">
+                                                <div class="media-container sortable-container" data-select="1">
+                                                    <div class="image-div " style="background-image: url(https://d3d9qpagvotra1.cloudfront.net/555123456789/images/Screenshot_142/Screenshot_142-src.png);">
+                                                        <input type="checkbox" name="product_image[]" class="check" value="262">
+                                                        <label class="default-link">Mark default</label>
+                                                    </div>
+                                                    <div class="image-div " style="background-image: url(https://d3d9qpagvotra1.cloudfront.net/555123456789/images/Screenshot_125/Screenshot_125-300-min.png);">
+                                                        <input type="checkbox" name="product_image[]" class="check" value="261">
+                                                        <label class="default-link">Mark default</label>
+                                                    </div>
+                                                    <div class="image-div " style="background-image: url(https://d3d9qpagvotra1.cloudfront.net/555123456789/images/download/download-src.jpg);">
+                                                        <input type="checkbox" name="product_image[]" class="check" value="260">
+                                                        <label class="default-link">Mark default</label>
+                                                    </div>
+                                                    <div class="image-div " style="background-image: url(https://d3d9qpagvotra1.cloudfront.net/555123456789/images/Screenshot_144/Screenshot_144-300-min.png);">
+                                                        <input type="checkbox" name="product_image[]" class="check" value="215">
+                                                        <label class="default-link">Mark default</label>
+                                                    </div>
+                                                    <div class="image-div " style="background-image: url(https://d3d9qpagvotra1.cloudfront.net/555123456789/images/Screenshot_139/Screenshot_139-300-min.png);">
+                                                        <input type="checkbox" name="product_image[]" class="check" value="214">
+                                                        <label class="default-link">Mark default</label>
+                                                    </div>
+                                                    <div class="image-div " style="background-image: url(https://d3d9qpagvotra1.cloudfront.net/555123456789/images/For_Advocates_hex_shapes/For_Advocates_hex_shapes-src.png);">
+                                                        <input type="checkbox" name="product_image[]" class="check" value="206">
+                                                        <label class="default-link">Mark default</label>
+                                                    </div>
+                                                    <div class="image-div " style="background-image: url(https://d3d9qpagvotra1.cloudfront.net/555123456789/images/Screenshot_142/Screenshot_142-src.png);">
+                                                        <input type="checkbox" name="product_image[]" class="check" value="141">
+                                                        <label class="default-link">Mark default</label>
+                                                    </div>
+                                                    <div class="image-div " style="background-image: url(https://d3d9qpagvotra1.cloudfront.net/555123456789/images/carrot_on_a_stick_wallpaper_1440x900/carrot_on_a_stick_wallpaper_1440x900-300-min.jpg);">
+                                                        <input type="checkbox" name="product_image[]" class="check" value="140">
+                                                        <label class="default-link">Mark default</label>
+                                                    </div>
+                                                    <div class="image-div " style="background-image: url(https://d3d9qpagvotra1.cloudfront.net/555123456789/images/injustice_2_superman_wallpaper_1440x900/injustice_2_superman_wallpaper_1440x900-300-min.jpg);">
+                                                        <input type="checkbox" name="product_image[]" class="check" value="139">
+                                                        <label class="default-link">Mark default</label>
+                                                    </div>
+                                                    <div class="image-div " style="background-image: url(https://d3d9qpagvotra1.cloudfront.net/555123456789/images/cropped_1680_1050_414351/cropped_1680_1050_414351-300-min.jpg);">
+                                                        <input type="checkbox" name="product_image[]" class="check" value="138">
+                                                        <label class="default-link">Mark default</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="btn-container" data-button-loader="1">
+                                            <button class="kIHqU" aria-label="submit">
+                                                <span>Submit</span>
+                                            </button>
+                                        </div>
+                                    </div>
                                     <div class="step-nav-btn-container">
                                         <button class="step-back-btn UJQCM">Back</button>
                                         <button class="step-next-btn UJQCM">Next</button>
@@ -212,7 +209,626 @@
 
                                 <div class="step-container step-container-4">
                                     <h2>Step 4</h2>
-                                    <div class="step-feature-container"></div>
+                                    <div class="step-feature-container">
+                                        <!-- pay per view -->
+                                        <div class="pay-per-view-container">
+                                            <h3>Pay per view details</h3>
+                                            <p>Pay per view details</p>
+                                        </div>
+
+                                        <!-- Subscription plans -->
+                                        <div class="subscription-container plans-container plans-container-one splide">
+                                            <p>Choose subscription plan:</p>
+                                            <div class="splide__track">
+                                                <div class="plan-carousel-wrapper splide__list">
+                                                    <div class="plan basic-plan splide__slide">
+                                                        <h3 class="plan__title">Basic</h3>
+                                                        <div class="plan__pricing">
+                                                            <span class="plan__price"
+                                                                >USD0.99</span
+                                                            >
+                                                            <span>/ month</span>
+                                                        </div>
+                                                        <button class="plan__choose-btn">
+                                                            Choose Plan
+                                                        </button>
+                                                        <p class="plan__text">
+                                                            Lorem ipsum dolor sit amet
+                                                            consectetur adipisicing elit.
+                                                            Voluptas iste error animi doloremque
+                                                            incidunt iusto. Delectus,
+                                                            repudiandae.
+                                                        </p>
+                                                        <ul class="plan__feature-list">
+                                                            <li>
+                                                                <div
+                                                                    class="plan__feature-list__icon-container"
+                                                                >
+                                                                    <svg
+                                                                        viewBox="0 0 24 24"
+                                                                        fill="none"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                    >
+                                                                        <g
+                                                                            id="SVGRepo_bgCarrier"
+                                                                            stroke-width="0"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_tracerCarrier"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_iconCarrier"
+                                                                        >
+                                                                            <path
+                                                                                d="M4.89163 13.2687L9.16582 17.5427L18.7085 8"
+                                                                                stroke="#000000"
+                                                                                stroke-width="2.5"
+                                                                                stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                            ></path>
+                                                                        </g>
+                                                                    </svg>
+                                                                </div>
+                                                                <span
+                                                                    class="plan__feature-list__text"
+                                                                    >Dashboard</span
+                                                                >
+                                                            </li>
+                                                            <li>
+                                                                <div
+                                                                    class="plan__feature-list__icon-container"
+                                                                >
+                                                                    <svg
+                                                                        viewBox="0 0 24 24"
+                                                                        fill="none"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                    >
+                                                                        <g
+                                                                            id="SVGRepo_bgCarrier"
+                                                                            stroke-width="0"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_tracerCarrier"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_iconCarrier"
+                                                                        >
+                                                                            <path
+                                                                                d="M4.89163 13.2687L9.16582 17.5427L18.7085 8"
+                                                                                stroke="#000000"
+                                                                                stroke-width="2.5"
+                                                                                stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                            ></path>
+                                                                        </g>
+                                                                    </svg>
+                                                                </div>
+                                                                <span
+                                                                    class="plan__feature-list__text"
+                                                                    >Dashboard</span
+                                                                >
+                                                            </li>
+                                                            <li>
+                                                                <div
+                                                                    class="plan__feature-list__icon-container"
+                                                                >
+                                                                    <svg
+                                                                        viewBox="0 0 24 24"
+                                                                        fill="none"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                    >
+                                                                        <g
+                                                                            id="SVGRepo_bgCarrier"
+                                                                            stroke-width="0"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_tracerCarrier"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_iconCarrier"
+                                                                        >
+                                                                            <path
+                                                                                d="M4.89163 13.2687L9.16582 17.5427L18.7085 8"
+                                                                                stroke="#000000"
+                                                                                stroke-width="2.5"
+                                                                                stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                            ></path>
+                                                                        </g>
+                                                                    </svg>
+                                                                </div>
+                                                                <span
+                                                                    class="plan__feature-list__text"
+                                                                    >Dashboard</span
+                                                                >
+                                                            </li>
+                                                            <li>
+                                                                <div
+                                                                    class="plan__feature-list__icon-container"
+                                                                >
+                                                                    <svg
+                                                                        viewBox="0 0 24 24"
+                                                                        fill="none"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                    >
+                                                                        <g
+                                                                            id="SVGRepo_bgCarrier"
+                                                                            stroke-width="0"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_tracerCarrier"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_iconCarrier"
+                                                                        >
+                                                                            <path
+                                                                                d="M4.89163 13.2687L9.16582 17.5427L18.7085 8"
+                                                                                stroke="#000000"
+                                                                                stroke-width="2.5"
+                                                                                stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                            ></path>
+                                                                        </g>
+                                                                    </svg>
+                                                                </div>
+                                                                <span
+                                                                    class="plan__feature-list__text"
+                                                                    >Dashboard</span
+                                                                >
+                                                            </li>
+                                                            <li>
+                                                                <div
+                                                                    class="plan__feature-list__icon-container"
+                                                                >
+                                                                    <svg
+                                                                        viewBox="0 0 24 24"
+                                                                        fill="none"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                    >
+                                                                        <g
+                                                                            id="SVGRepo_bgCarrier"
+                                                                            stroke-width="0"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_tracerCarrier"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_iconCarrier"
+                                                                        >
+                                                                            <path
+                                                                                d="M4.89163 13.2687L9.16582 17.5427L18.7085 8"
+                                                                                stroke="#000000"
+                                                                                stroke-width="2.5"
+                                                                                stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                            ></path>
+                                                                        </g>
+                                                                    </svg>
+                                                                </div>
+                                                                <span
+                                                                    class="plan__feature-list__text"
+                                                                    >Dashboard</span
+                                                                >
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="plan plus-plan splide__slide">
+                                                        <div class="plan__header tRLtc"></div>
+                                                        <h3 class="plan__title">Plus</h3>
+                                                        <div class="plan__pricing">
+                                                            <span class="plan__price"
+                                                                >USD10.99</span
+                                                            >
+                                                            <span>/ month</span>
+                                                        </div>
+                                                        <button class="plan__choose-btn">
+                                                            Choose Plan
+                                                        </button>
+                                                        <p class="plan__text">
+                                                            Lorem ipsum dolor sit amet
+                                                            consectetur adipisicing elit.
+                                                            Voluptas iste error animi doloremque
+                                                            incidunt iusto. Delectus,
+                                                            repudiandae.
+                                                        </p>
+                                                        <ul class="plan__feature-list">
+                                                            <li>
+                                                                <div
+                                                                    class="plan__feature-list__icon-container"
+                                                                >
+                                                                    <svg
+                                                                        viewBox="0 0 24 24"
+                                                                        fill="none"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                    >
+                                                                        <g
+                                                                            id="SVGRepo_bgCarrier"
+                                                                            stroke-width="0"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_tracerCarrier"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_iconCarrier"
+                                                                        >
+                                                                            <path
+                                                                                d="M4.89163 13.2687L9.16582 17.5427L18.7085 8"
+                                                                                stroke="#000000"
+                                                                                stroke-width="2.5"
+                                                                                stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                            ></path>
+                                                                        </g>
+                                                                    </svg>
+                                                                </div>
+                                                                <span
+                                                                    class="plan__feature-list__text"
+                                                                    >Dashboard</span
+                                                                >
+                                                            </li>
+                                                            <li>
+                                                                <div
+                                                                    class="plan__feature-list__icon-container"
+                                                                >
+                                                                    <svg
+                                                                        viewBox="0 0 24 24"
+                                                                        fill="none"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                    >
+                                                                        <g
+                                                                            id="SVGRepo_bgCarrier"
+                                                                            stroke-width="0"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_tracerCarrier"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_iconCarrier"
+                                                                        >
+                                                                            <path
+                                                                                d="M4.89163 13.2687L9.16582 17.5427L18.7085 8"
+                                                                                stroke="#000000"
+                                                                                stroke-width="2.5"
+                                                                                stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                            ></path>
+                                                                        </g>
+                                                                    </svg>
+                                                                </div>
+                                                                <span
+                                                                    class="plan__feature-list__text"
+                                                                    >Dashboard</span
+                                                                >
+                                                            </li>
+                                                            <li>
+                                                                <div
+                                                                    class="plan__feature-list__icon-container"
+                                                                >
+                                                                    <svg
+                                                                        viewBox="0 0 24 24"
+                                                                        fill="none"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                    >
+                                                                        <g
+                                                                            id="SVGRepo_bgCarrier"
+                                                                            stroke-width="0"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_tracerCarrier"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_iconCarrier"
+                                                                        >
+                                                                            <path
+                                                                                d="M4.89163 13.2687L9.16582 17.5427L18.7085 8"
+                                                                                stroke="#000000"
+                                                                                stroke-width="2.5"
+                                                                                stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                            ></path>
+                                                                        </g>
+                                                                    </svg>
+                                                                </div>
+                                                                <span
+                                                                    class="plan__feature-list__text"
+                                                                    >Dashboard</span
+                                                                >
+                                                            </li>
+                                                            <li>
+                                                                <div
+                                                                    class="plan__feature-list__icon-container"
+                                                                >
+                                                                    <svg
+                                                                        viewBox="0 0 24 24"
+                                                                        fill="none"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                    >
+                                                                        <g
+                                                                            id="SVGRepo_bgCarrier"
+                                                                            stroke-width="0"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_tracerCarrier"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_iconCarrier"
+                                                                        >
+                                                                            <path
+                                                                                d="M4.89163 13.2687L9.16582 17.5427L18.7085 8"
+                                                                                stroke="#000000"
+                                                                                stroke-width="2.5"
+                                                                                stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                            ></path>
+                                                                        </g>
+                                                                    </svg>
+                                                                </div>
+                                                                <span
+                                                                    class="plan__feature-list__text"
+                                                                    >Dashboard</span
+                                                                >
+                                                            </li>
+                                                            <li>
+                                                                <div
+                                                                    class="plan__feature-list__icon-container"
+                                                                >
+                                                                    <svg
+                                                                        viewBox="0 0 24 24"
+                                                                        fill="none"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                    >
+                                                                        <g
+                                                                            id="SVGRepo_bgCarrier"
+                                                                            stroke-width="0"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_tracerCarrier"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_iconCarrier"
+                                                                        >
+                                                                            <path
+                                                                                d="M4.89163 13.2687L9.16582 17.5427L18.7085 8"
+                                                                                stroke="#000000"
+                                                                                stroke-width="2.5"
+                                                                                stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                            ></path>
+                                                                        </g>
+                                                                    </svg>
+                                                                </div>
+                                                                <span
+                                                                    class="plan__feature-list__text"
+                                                                    >Dashboard</span
+                                                                >
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="plan pro-plan splide__slide">
+                                                        <h3 class="plan__title">Pro</h3>
+                                                        <div class="plan__pricing">
+                                                            <span class="plan__price"
+                                                                >USD19.99</span
+                                                            >
+                                                            <span>/ month</span>
+                                                        </div>
+                                                        <button class="plan__choose-btn">
+                                                            Choose Plan
+                                                        </button>
+                                                        <p class="plan__text">
+                                                            Lorem ipsum dolor sit amet
+                                                            consectetur adipisicing elit.
+                                                            Voluptas iste error animi doloremque
+                                                            incidunt iusto. Delectus,
+                                                            repudiandae.
+                                                        </p>
+                                                        <ul class="plan__feature-list">
+                                                            <li>
+                                                                <div
+                                                                    class="plan__feature-list__icon-container"
+                                                                >
+                                                                    <svg
+                                                                        viewBox="0 0 24 24"
+                                                                        fill="none"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                    >
+                                                                        <g
+                                                                            id="SVGRepo_bgCarrier"
+                                                                            stroke-width="0"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_tracerCarrier"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_iconCarrier"
+                                                                        >
+                                                                            <path
+                                                                                d="M4.89163 13.2687L9.16582 17.5427L18.7085 8"
+                                                                                stroke="#000000"
+                                                                                stroke-width="2.5"
+                                                                                stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                            ></path>
+                                                                        </g>
+                                                                    </svg>
+                                                                </div>
+                                                                <span
+                                                                    class="plan__feature-list__text"
+                                                                    >Dashboard</span
+                                                                >
+                                                            </li>
+                                                            <li>
+                                                                <div
+                                                                    class="plan__feature-list__icon-container"
+                                                                >
+                                                                    <svg
+                                                                        viewBox="0 0 24 24"
+                                                                        fill="none"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                    >
+                                                                        <g
+                                                                            id="SVGRepo_bgCarrier"
+                                                                            stroke-width="0"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_tracerCarrier"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_iconCarrier"
+                                                                        >
+                                                                            <path
+                                                                                d="M4.89163 13.2687L9.16582 17.5427L18.7085 8"
+                                                                                stroke="#000000"
+                                                                                stroke-width="2.5"
+                                                                                stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                            ></path>
+                                                                        </g>
+                                                                    </svg>
+                                                                </div>
+                                                                <span
+                                                                    class="plan__feature-list__text"
+                                                                    >Dashboard</span
+                                                                >
+                                                            </li>
+                                                            <li>
+                                                                <div
+                                                                    class="plan__feature-list__icon-container"
+                                                                >
+                                                                    <svg
+                                                                        viewBox="0 0 24 24"
+                                                                        fill="none"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                    >
+                                                                        <g
+                                                                            id="SVGRepo_bgCarrier"
+                                                                            stroke-width="0"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_tracerCarrier"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_iconCarrier"
+                                                                        >
+                                                                            <path
+                                                                                d="M4.89163 13.2687L9.16582 17.5427L18.7085 8"
+                                                                                stroke="#000000"
+                                                                                stroke-width="2.5"
+                                                                                stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                            ></path>
+                                                                        </g>
+                                                                    </svg>
+                                                                </div>
+                                                                <span
+                                                                    class="plan__feature-list__text"
+                                                                    >Dashboard</span
+                                                                >
+                                                            </li>
+                                                            <li>
+                                                                <div
+                                                                    class="plan__feature-list__icon-container"
+                                                                >
+                                                                    <svg
+                                                                        viewBox="0 0 24 24"
+                                                                        fill="none"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                    >
+                                                                        <g
+                                                                            id="SVGRepo_bgCarrier"
+                                                                            stroke-width="0"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_tracerCarrier"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_iconCarrier"
+                                                                        >
+                                                                            <path
+                                                                                d="M4.89163 13.2687L9.16582 17.5427L18.7085 8"
+                                                                                stroke="#000000"
+                                                                                stroke-width="2.5"
+                                                                                stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                            ></path>
+                                                                        </g>
+                                                                    </svg>
+                                                                </div>
+                                                                <span
+                                                                    class="plan__feature-list__text"
+                                                                    >Dashboard</span
+                                                                >
+                                                            </li>
+                                                            <li>
+                                                                <div
+                                                                    class="plan__feature-list__icon-container"
+                                                                >
+                                                                    <svg
+                                                                        viewBox="0 0 24 24"
+                                                                        fill="none"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                    >
+                                                                        <g
+                                                                            id="SVGRepo_bgCarrier"
+                                                                            stroke-width="0"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_tracerCarrier"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                        ></g>
+                                                                        <g
+                                                                            id="SVGRepo_iconCarrier"
+                                                                        >
+                                                                            <path
+                                                                                d="M4.89163 13.2687L9.16582 17.5427L18.7085 8"
+                                                                                stroke="#000000"
+                                                                                stroke-width="2.5"
+                                                                                stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                            ></path>
+                                                                        </g>
+                                                                    </svg>
+                                                                </div>
+                                                                <span
+                                                                    class="plan__feature-list__text"
+                                                                    >Dashboard</span
+                                                                >
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="step-nav-btn-container">
                                         <button class="step-back-btn UJQCM">Back</button>
                                         <button class="step-next-btn UJQCM">Next</button>
@@ -221,16 +837,11 @@
 
                                 <div class="step-container step-container-5">
                                     <h2>Step 5</h2>
-                                    <div class="step-feature-container"></div>
-                                    <div class="step-nav-btn-container">
-                                        <button class="step-back-btn UJQCM">Back</button>
-                                        <button class="step-next-btn UJQCM">Next</button>
-                                    </div>
-                                </div>
+                                    <h3>Success!</h3>
+                                    <p>Waiting for moderation...</p>
+                                    <div class="step-feature-container">
 
-                                <div class="step-container step-container-6">
-                                    <h2>Step 6</h2>
-                                    <div class="step-feature-container"></div>
+                                    </div>
                                     <div class="step-nav-btn-container">
                                         <button class="step-back-btn UJQCM">Back</button>
                                     </div>
@@ -242,27 +853,5 @@
             </div>
         </div>
     </div>
-
-    <!-- lightgallery scripts for image and video preview -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js" integrity="sha512-dSI4QnNeaXiNEjX2N8bkb16B7aMu/8SI5/rE6NIa3Hr/HnWUO+EAZpizN2JQJrXuvU7z0HTgpBVk/sfGd0oW+w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/thumbnail/lg-thumbnail.min.js" integrity="sha512-Jx+orEb1KJtJ6Ajfshhr7is0zqgUC7H9ylk76KMtB9Ea2WAf/Muyzpe9zvBAYQQQKdAbj+rNYEorsRQLsmRafA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/fullscreen/lg-fullscreen.min.js" integrity="sha512-wUl8rYJugCiHiMm1uyGDqcgkvwoY9paD9vLJzT3e4mwp46yB0cicFVcvzy8N6UpbtQyFlJDBzrQQ3BNL72w1+A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/zoom/lg-zoom.min.js" integrity="sha512-BfC/MaayF9sOZyn1bs1R1P8dEugU7v0j5Qu2FeWVfF/rhKUKZBD9kgNqRNinefIp9zAE7g2KhlwwhMpl5V1jMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/video/lg-video.min.js" integrity="sha512-mjdf6tU1Mksu9Hq2YXfbxdzzYHU7SJYmAsMnrhBf80SkHFvk6eHa2d79JM0q5w5ft5nQyBQ0EMB+XTmnvhcFgA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <!-- Sortable Animation library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.13.0/Sortable.min.js"></script>
-
-    <!-- Progressbar Animation library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.0.1/progressbar.min.js" integrity="sha512-CMuWpLFXT32GBKUW/9880UbFC2t/1SkCqRZXSIGXFp9lmmFhBuHP6ENqenghA1qEzN3fHPXGGx0arvs3JQ6MNg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <!-- axios library for making asynchronous HTTP requests -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <!-- Custom JavaScript files for different functionalities -->
-    <script async="" type="module" src="https://playground.codelinden.com/files/s3uploadtest/123456789/scripts/index.js"></script>
-    <script async="" type="module" src="https://playground.codelinden.com/files/s3uploadtest/123456789/scripts/imageSortAndSelect.js"></script>
-    <script async="" type="module" src="https://playground.codelinden.com/files/s3uploadtest/123456789/scripts/socket.js"></script>
-    <script async="" type="module" src="https://playground.codelinden.com/files/s3uploadtest/123456789/scripts/lightGallery.js"></script>
 </body>
 </html>
