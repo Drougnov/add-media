@@ -1,6 +1,6 @@
 let currentStep = 1;
 const totalSteps = 6;
-let uploadMethod = "";
+let uploadMethod = "both";
 
 // Show the current step and update the progress bar
 function showStep(step) {
@@ -40,3 +40,15 @@ document.querySelectorAll('.step-back-btn').forEach((backButton) => {
 
 // Show the initial step
 showStep(currentStep);
+
+
+// Function to update the uploadMethod variable
+function updateUploadMethod(event) {
+    uploadMethod = event.target.value;
+}
+
+const uploadMethodInputs = document.querySelectorAll('.upload-method-input');
+// update upload method on radio click
+uploadMethodInputs.forEach((radio) => {
+    radio.addEventListener('click', updateUploadMethod);
+});
