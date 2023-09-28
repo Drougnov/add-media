@@ -203,11 +203,9 @@
                                                 </p>
                                             </div>
                                         </form>
+
                                         <div id="loader">
                                             <div id="loader-number" class="tRLtc">0</div>
-                                            <!-- <svg class="loader-svg">
-                                                <circle class="svg-circle" r="18" cx="50%" cy="50%"></circle>
-                                            </svg> -->
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: rgb(255, 255, 255); display: block; shape-rendering: auto;" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
                                                 <circle cx="50" cy="50" r="30" stroke="#f8f8f8" stroke-width="2" fill="none"/>
                                                 <circle cx="50" cy="50" r="30" stroke="#ff8bfe" stroke-width="2" stroke-linecap="round" fill="none">
@@ -288,12 +286,6 @@
                                 <div class="step-container step-container-4">
                                     <h2>Step 4</h2>
                                     <div class="step-feature-container">
-                                        <!-- pay per view -->
-                                        <div class="pay-per-view-container">
-                                            <h3>Pay per view details</h3>
-                                            <p>Pay per view details</p>
-                                        </div>
-
                                         <!-- Subscription plans -->
                                         <div class="subscription-container">
                                             <p>Choose subscription tier:</p>
@@ -323,6 +315,37 @@
                                                     <span class="radio-placeholder"></span>
                                                 </label>
                                             </div>
+                                        </div>
+
+                                        <!-- pay per view -->
+                                        <div class="pay-per-view-container">
+                                            <p>Submit the form to activate pay per view: </p>
+                                            <form action="" method="post">
+                                                <label for="name">Name:</label>
+                                                <input type="text" id="name" name="name" required><br><br>
+                                        
+                                                <label for="email">Email:</label>
+                                                <input type="email" id="email" name="email" required><br><br>
+                                        
+                                                <label for="content_id">Content ID:</label>
+                                                <input type="text" id="content_id" name="content_id" required><br><br>
+                                        
+                                                <label for="payment_amount">Payment Amount (USD):</label>
+                                                <input type="number" id="payment_amount" name="payment_amount" step="0.01" required><br><br>
+                                        
+                                                <!-- Add additional fields as needed -->
+                                        
+                                                <label for="card_number">Credit Card Number:</label>
+                                                <input type="text" id="card_number" name="card_number" required><br><br>
+                                        
+                                                <label for="expiration_date">Expiration Date:</label>
+                                                <input type="text" id="expiration_date" name="expiration_date" placeholder="MM/YY" required><br><br>
+                                        
+                                                <label for="cvv">CVV:</label>
+                                                <input type="text" id="cvv" name="cvv" required><br><br>
+                                        
+                                                <input type="submit" value="Pay Now">
+                                            </form>
                                         </div>
                                     </div>
                                     <div class="step-nav-btn-container">
