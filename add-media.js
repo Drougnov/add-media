@@ -87,7 +87,7 @@ toggleContainers();
 const mediaTypeRadioButtons = document.querySelectorAll('.media-type-input');
 const uploadContainers = document.querySelectorAll('.upload-container');
 
-// Function to show/hide upload containers based on the selected media type
+// Show/hide upload containers based on the selected media type
 function toggleUploadContainers(selectedOption) {
     // Hide all upload containers
     uploadContainers.forEach((container) => {
@@ -106,7 +106,7 @@ toggleUploadContainers();
 const mediaTypeContainer = document.getElementById('media-type-container');
 const mediaTypeResetBtn = document.querySelector('.media-type-reset-btn');
 
-// Add change event listeners to radio buttons
+// handle radio button click
 mediaTypeRadioButtons.forEach((radioButton) => {
     radioButton.addEventListener('change', function () {
         const selectedOption = this.value;
@@ -114,11 +114,14 @@ mediaTypeRadioButtons.forEach((radioButton) => {
         // Update the uploaded media type
         uploadedMediaType = selectedOption;
 
-        // Call the function to show/hide upload containers
+        // Show/hide upload containers
         toggleUploadContainers(selectedOption);
 
+        // Add classes to radio container and selected radio option
         mediaTypeContainer.classList.add('option-selected');
         radioButton.parentElement.classList.add('selected');
+
+        // Show reset button
         mediaTypeResetBtn.style.display = "block";
     });
 });
@@ -132,19 +135,27 @@ mediaTypeRadioButtons.forEach((radioButton) => {
 });
 
 
-
+// handle reset button click
 mediaTypeResetBtn.addEventListener('click', ()=>{
+    // remove class from radio container
     mediaTypeContainer.classList.remove('option-selected');
+
     mediaTypeRadioButtons.forEach((radioButton) => {
+        // uncheck all the radio input
         radioButton.checked = false;
-        mediaTypeResetBtn.style.display = "none";
+        //hide all the upload containers
         uploadContainers.forEach((container) => {
             container.style.display = 'none';
         });
+
+        // remove class from selected option
         if(radioButton.parentElement.classList.contains('selected')){
             radioButton.parentElement.classList.remove('selected');
         }
     })
+
+    //hide reset button
+    mediaTypeResetBtn.style.display = "none";
 })
 
 
@@ -160,7 +171,7 @@ countdownNumberEl.textContent = countdown;
 
 function startCountdown() {
     intervalId = setInterval(function() {
-        countdown = ++countdown > 100 ? 0 : countdown;
+        countdown = ++countdown > 100 ? 0 : countdown; // count up to 100 the stop
 
         countdownNumberEl.textContent = countdown;
 
