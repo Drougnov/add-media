@@ -159,27 +159,23 @@ mediaTypeResetBtn.addEventListener('click', ()=>{
 })
 
 
-// ------------------------------------------handle-countdown----------------------------------------------------
+// ------------------------------------------handle-loader----------------------------------------------------
 
-var countdownNumberEl = document.getElementById('countdown-number');
-var countdown = 0;
+var loaderNumberEl = document.getElementById('loader-number');
+var loader = 0;
 var totalDuration = 2; // Total duration in seconds
 var intervalId = null;
 
-countdownNumberEl.textContent = countdown;
+loaderNumberEl.textContent = loader;
 
 
-function startCountdown() {
+function startloader() {
     intervalId = setInterval(function() {
-        countdown = ++countdown > 100 ? 0 : countdown; // count up to 100 the stop
+        loader = ++loader > 100 ? 0 : loader; // count up to 100 the stop
 
-        countdownNumberEl.textContent = countdown;
+        loaderNumberEl.textContent = loader;
 
-        // Update the circle's animation based on countdown (0 to 100)
-        var circle = document.querySelector('.svg-circle');
-        circle.style.animation = `countdown ${totalDuration}s linear forwards`;
-
-        if (countdown === 100) {
+        if (loader === 100) {
             clearInterval(intervalId);
             intervalId = null;
         }
@@ -189,8 +185,8 @@ function startCountdown() {
 uploadButtons = document.querySelectorAll('.upload-button');
 uploadButtons.forEach(uploadBtn => {
     uploadBtn.addEventListener('click', ()=>{
-        const loader = document.getElementById('countdown');
+        const loader = document.getElementById('loader');
         loader.classList.add('gsCWf');
-        startCountdown();
+        startloader();
     });
 })

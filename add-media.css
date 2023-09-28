@@ -241,54 +241,36 @@ label.selection-radio .media-type__text-container{
 
 
 /* loader */
-#countdown {
+#loader {
+    width: 200px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    height: 100px;
-    width: 100px;
     text-align: center;
+    position: relative;
     display: none;
 }
 
-#countdown-number {
+#loader-number {
     position: absolute;
     color: black;
     display: inline-block;
     line-height: 40px;
+    z-index: 1;
 }
 
-#countdown svg {
+#loader svg {
     position: absolute;
     top: 0;
     right: 0;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     transform: rotateY(-180deg) rotateZ(-90deg);
 }
 
-.svg-circle {
-    stroke-dasharray: calc(2 * 18 * 3.14159265359);
-    stroke-dashoffset: calc(2 * 18 * 3.14159265359);
-    stroke-linecap: round;
-    stroke-width: 2px;
-    stroke: red;
-    fill: none;
-}
 
-@keyframes countdown {
-    from {
-        stroke-dashoffset: calc(2 * 18 * 3.14159265359);
-    }
-    to {
-        stroke-dashoffset: 0px;
-    }
-}
-
-
-
-@keyframes countdown {
+@keyframes loader {
     from {
         stroke-dashoffset: 113px;
     }
