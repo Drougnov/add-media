@@ -141,7 +141,7 @@ label.selection-radio .radio-placeholder{
     -o-border-radius: 50%;
 }
 
-#upload-method-container label.selection-radio .radio-placeholder::after{
+label.selection-radio .radio-placeholder::after{
     position: absolute;
     content: '';
     width: 16px;
@@ -154,11 +154,15 @@ label.selection-radio .radio-placeholder{
     -o-border-radius: 50%;
 }
 
+#media-type-container label.selection-radio .radio-placeholder::after{
+    display: none;
+}
+
 label.selection-radio input:checked ~ span.radio-placeholder{
     border: 1px solid transparent;
 }
 
-#upload-method-container label.selection-radio input:checked ~ span.radio-placeholder::after{
+label.selection-radio input:checked ~ span.radio-placeholder::after{
     border: 5px solid #3069fe;
 }
 
