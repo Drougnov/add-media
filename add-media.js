@@ -27,6 +27,7 @@ document.querySelectorAll('.step-next-btn').forEach((nextButton) => {
         if (currentStep < totalSteps) {
             currentStep++;
             showStep(currentStep);
+            console.log(uploadMethod)
         }
     });
 });
@@ -37,6 +38,7 @@ document.querySelectorAll('.step-back-btn').forEach((backButton) => {
         if (currentStep > 1) {
             currentStep--;
             showStep(currentStep);
+            console.log(uploadMethod)
         }
     });
 });

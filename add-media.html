@@ -68,18 +68,44 @@
                                 <div class="step-container step-container-1">
                                     <h2>Step 1</h2>
                                     <div class="step-feature-container">
-                                        <label for="upload-method-container">Choose upload method:</label>
-                                        <fieldset id="upload-method-container">
+                                        <p>Choose upload method:</p>
+                                        <div id="upload-method-container" class="selection-container">
+                                            <label class="selection-radio">
+                                                <input type="radio" name="upload_method" required="" class="upload-method-input" value="subscription">
+                                                <div class="selection-text-container upload-method__text-container">
+                                                    <h3 class="selection-title upload-method__title">Subscription</h3>
+                                                    <p class="selection-desc upload-method__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis velit ex alias nostrum deserunt animi molestias delectus cum nisi facilis!</p>
+                                                </div>
+                                                <span class="radio-placeholder"></span>
+                                            </label>
+                                            <label class="selection-radio">
+                                                <input type="radio" name="upload_method" required="" class="upload-method-input" value="pay-per-view">
+                                                <div class="selection-text-container upload-method__text-container">
+                                                    <h3 class="selection-title upload-method__title">Pay Per View</h3>
+                                                    <p class="selection-desc upload-method__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis velit ex alias nostrum deserunt animi molestias delectus cum nisi facilis!</p>
+                                                </div>
+                                                <span class="radio-placeholder"></span>
+                                            </label>
+                                            <label class="selection-radio">
+                                                <input type="radio" name="upload_method" required="" class="upload-method-input" value="both" checked>
+                                                <div class="selection-text-container upload-method__text-container">
+                                                    <h3 class="selection-title upload-method__title">Subscription & Pay Per View</h3>
+                                                    <p class="selection-desc upload-method__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis velit ex alias nostrum deserunt animi molestias delectus cum nisi facilis!</p>
+                                                </div>
+                                                <span class="radio-placeholder"></span>
+                                            </label>
+                                        </div>
+                                        <!-- <fieldset id="upload-method-container">
                                             <label class="upload-method-label">
                                                 <input type="radio" name="upload_method" required="" class="upload-method-input" value="pay-per-view">Pay per view</label>
                                             <label class="upload-method-label">
                                                 <input type="radio" name="upload_method" required="" class="upload-method-input" value="subscription">Subscription</label>
                                             <label class="upload-method-label">
                                                 <input type="radio" name="upload_method" required="" class="upload-method-input" value="both" checked="">Both</label>
-                                        </fieldset>
+                                        </fieldset> -->
                                     </div>
                                     <div class="step-nav-btn-container">
-                                        <button class="step-next-btn UJQCM">Next</button>
+                                        <button class="step-next-btn full-width-pink-btn">Next</button>
                                     </div>
                                 </div>
 

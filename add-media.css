@@ -36,7 +36,7 @@
 .progress-bar {
     width: 0%;
     height: 100%;
-    background-color: #4CAF50;
+    background-color: #fb5ba2;
     transition: all .1s linear;
     -webkit-transition: all .1s linear;
     -moz-transition: all .1s linear;
@@ -75,16 +75,93 @@
 
 
 /* step 1 */
-#upload-method-container{
-    margin: 20px 0 0 20px;
+.selection-container{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
-.upload-method-label{
-    display: block;
-    color: var(--form-label-color);
-    font-size: var(--form-label-size);
-    font-weight: var(--form-label-font-weight);
-    margin-bottom: 0.5rem;
+label.selection-radio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+label.selection-radio input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+label.selection-radio div {
+    width: 100%;
+    padding: 8px 48px 8px 16px;
+    border: 2px solid rgb(225, 228, 230);
+    display: inline-block;
+    color: #3069fe;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+}
+
+label.selection-radio input:checked + div {
+    border-color: #3069fe;
+}
+
+.selection-title{
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+.selection-desc{
+    margin-bottom: 0;
+}
+
+label.selection-radio .radio-placeholder{
+    position: absolute;
+    right: 16px;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(225, 228, 230);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+label.selection-radio .radio-placeholder::after{
+    position: absolute;
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 5px solid transparent;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+label.selection-radio input:checked ~ span.radio-placeholder{
+    border: 1px solid #3069fe;
+}
+
+label.selection-radio input:checked ~ span.radio-placeholder::after{
+    border: 5px solid #3069fe;
+}
+
+.full-width-pink-btn{
+    width: 100%;
 }
 
 
