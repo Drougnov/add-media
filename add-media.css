@@ -255,8 +255,9 @@ label.selection-radio .media-type__text-container{
 #loader-number {
     position: absolute;
     color: black;
-    display: inline-block;
+    font-size: 25px;
     line-height: 40px;
+    display: inline-block;
     z-index: 1;
 }
 
