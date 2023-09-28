@@ -1,7 +1,7 @@
 let currentStep = 1;
 let totalSteps = 5;
 let uploadMethod = "both";
-let uploadedMediaType = "image";
+let uploadedMediaType = "";
 
 // ------------------------------------handle steps toggle--------------------------------------------------
 
@@ -84,18 +84,12 @@ toggleContainers();
 
 // ------------------------------------handle media type--------------------------------------------------
 
-const mediaTypeSelect = document.getElementById('media-type');
+const mediaTypeRadioButtons = document.querySelectorAll('.media-type-input');
+const uploadContainers = document.querySelectorAll('.upload-container');
 
-// Show upload container based on selected media type option
-mediaTypeSelect.addEventListener('change', function () {
-    // Get the selected option's value
-    const selectedOption = mediaTypeSelect.value;
-
-    // Update the uploaded media type
-    uploadedMediaType = selectedOption;
-
+// Function to show/hide upload containers based on the selected media type
+function toggleUploadContainers(selectedOption) {
     // Hide all upload containers
-    const uploadContainers = document.querySelectorAll('.upload-container');
     uploadContainers.forEach((container) => {
         container.style.display = 'none';
     });
@@ -105,14 +99,27 @@ mediaTypeSelect.addEventListener('change', function () {
     if (selectedUploadContainer) {
         selectedUploadContainer.style.display = 'block';
     }
+}
+
+toggleUploadContainers();
+
+// Add change event listeners to radio buttons
+mediaTypeRadioButtons.forEach((radioButton) => {
+    radioButton.addEventListener('change', function () {
+        const selectedOption = this.value;
+
+        // Update the uploaded media type
+        uploadedMediaType = selectedOption;
+
+        // Call the function to show/hide upload containers
+        toggleUploadContainers(selectedOption);
+    });
 });
 
 // Initially, hide all upload containers except the selected container by default (image)
-const uploadContainers = document.querySelectorAll('.upload-container');
-uploadContainers.forEach((container) => {
-    if (container.classList.contains(`upload-container-${uploadedMediaType}`)) {
-        container.style.display = 'block';
-    } else {
-        container.style.display = 'none';
+mediaTypeRadioButtons.forEach((radioButton) => {
+    if (radioButton.checked) {
+        uploadedMediaType = radioButton.value;
+        toggleUploadContainers(uploadedMediaType);
     }
 });

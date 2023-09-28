@@ -97,12 +97,14 @@ label.selection-radio input {
     pointer-events: none;
 }
 
-label.selection-radio div {
+label.selection-radio .selection-text-container {
     width: 100%;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 8px 48px 8px 16px;
     border: 2px solid rgb(225, 228, 230);
-    display: inline-block;
-    color: #3069fe;
     border-radius: 16px;
     -webkit-border-radius: 16px;
     -moz-border-radius: 16px;
@@ -110,7 +112,7 @@ label.selection-radio div {
     -o-border-radius: 16px;
 }
 
-label.selection-radio input:checked + div {
+label.selection-radio input:checked + .selection-text-container {
     border-color: #3069fe;
 }
 
@@ -168,6 +170,19 @@ label.selection-radio input:checked ~ span.radio-placeholder::after{
 /* step 2 */
 .media-type-container{
     margin-bottom: 40px;
+}
+
+label.selection-radio .media-type__text-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+}
+
+.media-type__text-container .icon-container{
+    width: 24px;
+    height: 24px;
 }
 
 .upload-container {

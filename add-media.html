@@ -95,14 +95,6 @@
                                                 <span class="radio-placeholder"></span>
                                             </label>
                                         </div>
-                                        <!-- <fieldset id="upload-method-container">
-                                            <label class="upload-method-label">
-                                                <input type="radio" name="upload_method" required="" class="upload-method-input" value="pay-per-view">Pay per view</label>
-                                            <label class="upload-method-label">
-                                                <input type="radio" name="upload_method" required="" class="upload-method-input" value="subscription">Subscription</label>
-                                            <label class="upload-method-label">
-                                                <input type="radio" name="upload_method" required="" class="upload-method-input" value="both" checked="">Both</label>
-                                        </fieldset> -->
                                     </div>
                                     <div class="step-nav-btn-container">
                                         <button class="step-next-btn full-width-pink-btn">Next</button>
@@ -113,22 +105,75 @@
                                     <h2>Step 2</h2>
                                     <div class="step-feature-container">
                                         <div class="form-field media-type-container">
-                                            <label for="media-type">Select media type:</label>
-                                            <select name="media-type" id="media-type" required="" aria-required="true" aria-label="media-type" aria-describedby="select media type ">
-                                                <option value="image">Image</option>
-                                                <option value="gallery">Gallery Image</option>
-                                                <option value="video">Video</option>
-                                            </select>
+                                            <p>Select media type:</p>
+                                            <div id="media-type-container" class="selection-container">
+                                                <label class="selection-radio">
+                                                    <input type="radio" name="upload_method" required="" class="media-type-input" value="video">
+                                                    <div class="selection-text-container media-type__text-container">
+                                                        <div class="icon-container">
+                                                            <div class="svg-wrapper">
+                                                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                                                    <g id="SVGRepo_iconCarrier"> 
+                                                                        <rect width="24" height="24" fill="white"></rect> 
+                                                                        <path d="M21 16V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V18M21 16V4C21 3.44772 20.5523 3 20 3H4C3.44772 3 3 3.44772 3 4V18M21 16L15.4829 12.3219C15.1843 12.1228 14.8019 12.099 14.4809 12.2595L3 18" stroke="#000000" stroke-linejoin="round"></path> 
+                                                                        <circle cx="8" cy="9" r="2" stroke="#000000" stroke-linejoin="round"></circle> 
+                                                                    </g>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                        <h3 class="selection-title media-type__title">Video</h3>
+                                                    </div>
+                                                    <span class="radio-placeholder"></span>
+                                                </label>
+                                                <label class="selection-radio">
+                                                    <input type="radio" name="upload_method" required="" class="media-type-input" value="gallery">
+                                                    <div class="selection-text-container media-type__text-container">
+                                                        <div class="icon-container">
+                                                            <div class="svg-wrapper">
+                                                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                                                    <g id="SVGRepo_iconCarrier"> 
+                                                                        <rect width="24" height="24" fill="white"></rect> 
+                                                                        <path d="M21 16V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V18M21 16V4C21 3.44772 20.5523 3 20 3H4C3.44772 3 3 3.44772 3 4V18M21 16L15.4829 12.3219C15.1843 12.1228 14.8019 12.099 14.4809 12.2595L3 18" stroke="#000000" stroke-linejoin="round"></path> 
+                                                                        <circle cx="8" cy="9" r="2" stroke="#000000" stroke-linejoin="round"></circle> 
+                                                                    </g>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                        <h3 class="selection-title media-type__title">Gallery</h3>
+                                                    </div>
+                                                    <span class="radio-placeholder"></span>
+                                                </label>
+                                                <label class="selection-radio">
+                                                    <input type="radio" name="upload_method" required="" class="media-type-input" value="image">
+                                                    <div class="selection-text-container media-type__text-container">
+                                                        <div class="icon-container">
+                                                            <div class="svg-wrapper">
+                                                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                                                    <g id="SVGRepo_iconCarrier"> 
+                                                                        <rect width="24" height="24" fill="white"></rect> 
+                                                                        <path d="M21 16V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V18M21 16V4C21 3.44772 20.5523 3 20 3H4C3.44772 3 3 3.44772 3 4V18M21 16L15.4829 12.3219C15.1843 12.1228 14.8019 12.099 14.4809 12.2595L3 18" stroke="#000000" stroke-linejoin="round"></path> 
+                                                                        <circle cx="8" cy="9" r="2" stroke="#000000" stroke-linejoin="round"></circle> 
+                                                                    </g>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                        <h3 class="selection-title media-type__title">Image</h3>
+                                                    </div>
+                                                    <span class="radio-placeholder"></span>
+                                                </label>
+                                            </div>
                                         </div>
 
                                         <form action="">
                                             <!-- image -->
-                                            <div data-upload-id="1009" class="upload-container upload-container-image" data-max="1" data-max-size="10" data-allowed-types="image/jpeg,image/png" data-uid="123456789" data-resize="1" data-compress="1" data-name="gallery-image-a">
-                                                <!-- Hidden input for selecting image files -->
-                                                <input type="file" class="file-upload" accept="image/*" style="display: none">
-                                                <!-- Button for selecting image files -->
-                                                <button class="upload-button UJQCM">Select Image</button>
-                                                <!-- Message for instructions and file details -->
+                                            <div class="upload-container upload-container-image">
+                                                <button type="button" class="upload-button UJQCM">Select Image</button>
                                                 <p class="upload-msg">
                                                     Click the "Select Image" button or drag and drop a single image here
                                                     (Max size: <span class="max-size">10MB</span>). Allowed formats:
@@ -137,12 +182,8 @@
                                             </div>
 
                                             <!-- gallery -->
-                                            <div data-upload-id="2" class="upload-container upload-container-gallery" data-max="5" data-max-size="10" data-allowed-types="image/jpeg,image/png" data-uid="123456789" data-resize="1" data-compress="1" data-name="gallery-image-ab">
-                                                <!-- Hidden input for selecting multiple image files -->
-                                                <input type="file" class="file-upload" accept="image/*" multiple="" style="display: none">
-                                                <!-- Button for selecting multiple image files -->
-                                                <button class="upload-button UJQCM">Select Images</button>
-                                                <!-- Message for instructions and file details -->
+                                            <div class="upload-container upload-container-gallery">
+                                                <button type="button" class="upload-button UJQCM">Select Images</button>
                                                 <p class="upload-msg">
                                                     Click the "Select Image" button or drag and drop a single image here
                                                     (Max size: <span class="max-size">10MB</span>). Allowed formats:
@@ -151,12 +192,8 @@
                                             </div>
 
                                             <!-- videos -->
-                                            <div data-upload-id="3" class="upload-container upload-container-video" data-max="1" data-max-size="100" data-allowed-types="video/mp4,video/x-msvideo,video/quicktime,video/x-matroska,video/x-ms-wmv,video/webm,video/ogg,image/jpeg,image/png" data-uid="123456789" data-trimming="1" data-thumbnail="1" data-convert="1" data-name="primary-video-abc">
-                                                <!-- Hidden input for selecting video files -->
-                                                <input type="file" class="file-upload" accept="video/mp4,video/x-msvideo,video/quicktime,video/x-matroska,video/x-ms-wmv,video/webm,video/ogg" style="display: none">
-                                                <!-- Button for selecting video files -->
-                                                <button class="upload-button UJQCM">Select Video</button>
-                                                <!-- Message for instructions and file details -->
+                                            <div class="upload-container upload-container-video">
+                                                <button id="start-button" type="button" class="upload-button UJQCM">Select Video</button>
                                                 <p class="upload-msg">
                                                     Click the "Select Video" button or drag and drop a single image here
                                                     (Max size: <span class="max-size">100MB</span>). Allowed formats:
