@@ -123,3 +123,41 @@ mediaTypeRadioButtons.forEach((radioButton) => {
         toggleUploadContainers(uploadedMediaType);
     }
 });
+
+
+
+// ------------------------------------------handle-countdown----------------------------------------------------
+
+var countdownNumberEl = document.getElementById('countdown-number');
+var countdown = 0;
+var totalDuration = 2; // Total duration in seconds
+var intervalId = null;
+
+countdownNumberEl.textContent = countdown;
+
+
+function startCountdown() {
+    intervalId = setInterval(function() {
+        countdown = ++countdown > 100 ? 0 : countdown;
+
+        countdownNumberEl.textContent = countdown;
+
+        // Update the circle's animation based on countdown (0 to 100)
+        var circle = document.querySelector('.svg-circle');
+        circle.style.animation = `countdown ${totalDuration}s linear forwards`;
+
+        if (countdown === 100) {
+            clearInterval(intervalId);
+            intervalId = null;
+        }
+    }, (totalDuration * 1000) / 100); // Adjust the interval based on the total duration
+}
+
+uploadButtons = document.querySelectorAll('.upload-button');
+uploadButtons.forEach(uploadBtn => {
+    uploadBtn.addEventListener('click', ()=>{
+        const loader = document.getElementById('countdown');
+        loader.classList.add('gsCWf');
+        startCountdown();
+    });
+})
