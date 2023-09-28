@@ -27,7 +27,7 @@ document.querySelectorAll('.step-next-btn').forEach((nextButton) => {
         if (currentStep < totalSteps) {
             currentStep++;
             showStep(currentStep);
-            console.log(uploadMethod)
+            toggleBtnVisiblity();
         }
     });
 });
@@ -38,7 +38,7 @@ document.querySelectorAll('.step-back-btn').forEach((backButton) => {
         if (currentStep > 1) {
             currentStep--;
             showStep(currentStep);
-            console.log(uploadMethod)
+            toggleBtnVisiblity();
         }
     });
 });
@@ -61,10 +61,12 @@ uploadMethodInputs.forEach((radio) => {
     radio.addEventListener('click', updateUploadMethod);
 });
 
+
+const payPerViewContainer = document.querySelector('.pay-per-view-container');
+const subscriptionContainer = document.querySelector('.subscription-container');
+
 // Toggle containers based on uploadMethod value
 function toggleContainers() {
-    const payPerViewContainer = document.querySelector('.pay-per-view-container');
-    const subscriptionContainer = document.querySelector('.subscription-container');
 
     if (uploadMethod === "pay-per-view") {
         payPerViewContainer.style.display = "block";
@@ -73,7 +75,7 @@ function toggleContainers() {
         payPerViewContainer.style.display = "none";
         subscriptionContainer.style.display = "block";
     } else if (uploadMethod === "both") {
-        payPerViewContainer.style.display = "block";
+        payPerViewContainer.style.display = "none";
         subscriptionContainer.style.display = "block";
     }
 }
@@ -156,6 +158,49 @@ mediaTypeResetBtn.addEventListener('click', ()=>{
 
     //hide reset button
     mediaTypeResetBtn.style.display = "none";
+})
+
+
+// -----------------------------------handle subscription/pvp toggle--------------------------------------------
+
+const subscriptionBtn = document.querySelector('.sub-btn');
+const pvpBtn = document.querySelector('.pvp-btn');
+const stepFourNextBtn = document.querySelector('.step-container-4 .step-next-btn');
+const stepFourBackBtn = document.querySelector('.step-container-4 .step-back-btn');
+
+// On step four show/hide the extra buttons (show 2 out of 4 buttons)
+function toggleBtnVisiblity(){
+    console.log(uploadMethod, currentStep);
+    if(uploadMethod == "both" && currentStep == 4 && subscriptionContainer.style.display == "block"){
+        subscriptionBtn.style.display = "none";
+        stepFourBackBtn.style.display = "block";
+        pvpBtn.style.display = "block";
+        stepFourNextBtn.style.display = "none";
+    }else if(uploadMethod == "both" && currentStep == 4 && payPerViewContainer.style.display == "block"){
+        subscriptionBtn.style.display = "block";
+        stepFourBackBtn.style.display = "none";
+        pvpBtn.style.display = "none";
+        stepFourNextBtn.style.display = "block";
+    }else{
+        subscriptionBtn.style.display = "none";
+        stepFourBackBtn.style.display = "block";
+        pvpBtn.style.display = "none";
+        stepFourNextBtn.style.display = "block";
+    }
+}
+
+// Show subscription container and hide pvp container
+subscriptionBtn.addEventListener('click', ()=>{
+    payPerViewContainer.style.display = "none";
+    subscriptionContainer.style.display = "block";
+    toggleBtnVisiblity();
+})
+
+// Hide subscription container and show pvp container
+pvpBtn.addEventListener('click', ()=>{
+    payPerViewContainer.style.display = "block";
+    subscriptionContainer.style.display = "none";
+    toggleBtnVisiblity();
 })
 
 
