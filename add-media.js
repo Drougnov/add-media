@@ -103,6 +103,9 @@ function toggleUploadContainers(selectedOption) {
 
 toggleUploadContainers();
 
+const mediaTypeContainer = document.getElementById('media-type-container');
+const mediaTypeResetBtn = document.querySelector('.media-type-reset-btn');
+
 // Add change event listeners to radio buttons
 mediaTypeRadioButtons.forEach((radioButton) => {
     radioButton.addEventListener('change', function () {
@@ -113,6 +116,10 @@ mediaTypeRadioButtons.forEach((radioButton) => {
 
         // Call the function to show/hide upload containers
         toggleUploadContainers(selectedOption);
+
+        mediaTypeContainer.classList.add('option-selected');
+        radioButton.parentElement.classList.add('selected');
+        mediaTypeResetBtn.style.display = "block";
     });
 });
 
@@ -124,6 +131,21 @@ mediaTypeRadioButtons.forEach((radioButton) => {
     }
 });
 
+
+
+mediaTypeResetBtn.addEventListener('click', ()=>{
+    mediaTypeContainer.classList.remove('option-selected');
+    mediaTypeRadioButtons.forEach((radioButton) => {
+        radioButton.checked = false;
+        mediaTypeResetBtn.style.display = "none";
+        uploadContainers.forEach((container) => {
+            container.style.display = 'none';
+        });
+        if(radioButton.parentElement.classList.contains('selected')){
+            radioButton.parentElement.classList.remove('selected');
+        }
+    })
+})
 
 
 // ------------------------------------------handle-countdown----------------------------------------------------
