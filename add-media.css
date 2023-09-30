@@ -61,7 +61,38 @@
     display: none;
 }
 
+.step-feature-container{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-x: hidden;
+}
+
 .step-feature-container::-webkit-scrollbar{
+    display: none;
+}
+
+.upload-form-container{
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transition: all .3s ease-in;
+    -webkit-transition: all .3s ease-in;
+    -moz-transition: all .3s ease-in;
+    -ms-transition: all .3s ease-in;
+    -o-transition: all .3s ease-in;
+}
+
+.upload-form-container.file-uploaded{
+    transform: translateX(-150%);
+    -webkit-transform: translateX(-150%);
+    -moz-transform: translateX(-150%);
+    -ms-transform: translateX(-150%);
+    -o-transform: translateX(-150%);
+}
+
+.recieved-form-container{
     display: none;
 }
 
@@ -210,6 +241,15 @@ label.selection-radio .media-type__text-container{
     display: flex;
 }
 
+.file-placeholder{
+    width: max-content;
+    min-height: 150px;
+    border: 2px dashed #aaa;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
 /* loader */
 #loader {
     width: 200px;
@@ -218,7 +258,14 @@ label.selection-radio .media-type__text-container{
     justify-content: center;
     align-items: center;
     text-align: center;
-    position: relative;
+    position: absolute;
+    top: calc(50% - 30px);    /* minus the buttons height */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
     display: none;
 }
 
@@ -227,7 +274,7 @@ label.selection-radio .media-type__text-container{
     color: black;
     font-size: 25px;
     line-height: 40px;
-    display: inline-block;
+    display: none;
     z-index: 1;
 }
 
@@ -281,7 +328,6 @@ label.selection-radio .media-type__text-container{
     box-sizing: border-box;
     opacity: 1;
 }
-
 
 /* step 4 */
 .step-container-4 .step-feature-container{
