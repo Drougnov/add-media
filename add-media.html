@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-        rel="stylesheet"
-        href="https://fs.codelinden.com/wp-content/themes/hello-child/style.css"
-    />
+    <link rel="stylesheet" href="https://fs.codelinden.com/wp-content/themes/hello-child/style.css">
     <link rel="stylesheet" href="add-media.css">
-    <script src="add-media.js" defer></script>
+    <script src="add-media.js" defer=""></script>
 
     <!-- popup style and script -->
     <link rel="stylesheet" href="https://fs.codelinden.com/wp-content/plugins/fansocial/assets/css/popup-styles.css">
@@ -18,7 +13,7 @@
 <body>
     <div class="wrapper">
         <h1 class="wrapper-title">Add Media</h1>
-        <button id="default-steps-btn"  onclick="initiate_popup({'target': '#add-media-popup', 'overlay_color': 'rgb(0 170 255 / 58%)'});">Upload media</button>
+        <button id="default-steps-btn" onclick="initiate_popup({'target': '#add-media-popup', 'overlay_color': 'rgb(0 170 255 / 58%)'});">Upload media</button>
         <button id="thumbnail-steps-btn" onclick="initiate_popup({'target': '#add-media-popup', 'overlay_color': 'rgb(0 170 255 / 58%)'});">Upload thumbnail</button>
 
         <!-- outer wrapper -->
@@ -34,24 +29,10 @@
                         <!-- header right section -->
                         <div class="wcrwV gsCWf EJVsl">
                             <!-- close button -->
-                            <div
-                                class="AYaOY TNIio UYvZu gsCWf EJVsl OtrSK DeYlt"
-                            >
-                                <svg
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
+                            <div class="AYaOY TNIio UYvZu gsCWf EJVsl OtrSK DeYlt">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g>
-                                        <path
-                                            d="M16 16L12 12M12 12L8 8M12 12L16 8M12 12L8 16"
-                                            stroke="#000000"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        ></path>
+                                        <path d="M16 16L12 12M12 12L8 8M12 12L16 8M12 12L8 16" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                                     </g>
                                 </svg>
                             </div>
@@ -69,6 +50,7 @@
                                 <div class="step-container step-container-1">
                                     <div class="step-feature-container">
                                         <p>Choose upload method:</p>
+
                                         <div id="upload-method-container" class="selection-container">
                                             <label class="selection-radio">
                                                 <input type="radio" name="upload_method" required="" class="upload-method-input" value="subscription">
@@ -78,6 +60,7 @@
                                                 </div>
                                                 <span class="radio-placeholder"></span>
                                             </label>
+
                                             <label class="selection-radio">
                                                 <input type="radio" name="upload_method" required="" class="upload-method-input" value="pay-per-view">
                                                 <div class="selection-text-container upload-method__text-container">
@@ -86,16 +69,18 @@
                                                 </div>
                                                 <span class="radio-placeholder"></span>
                                             </label>
+
                                             <label class="selection-radio">
-                                                <input type="radio" name="upload_method" required="" class="upload-method-input" value="both" checked>
+                                                <input type="radio" name="upload_method" required="" class="upload-method-input" value="both" checked="">
                                                 <div class="selection-text-container upload-method__text-container">
-                                                    <h3 class="selection-title upload-method__title">Subscription & Pay Per View</h3>
+                                                    <h3 class="selection-title upload-method__title">Subscription &amp; Pay Per View</h3>
                                                     <p class="selection-desc upload-method__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis velit ex alias nostrum deserunt animi molestias delectus cum nisi facilis!</p>
                                                 </div>
                                                 <span class="radio-placeholder"></span>
                                             </label>
                                         </div>
                                     </div>
+
                                     <div class="step-nav-btn-container">
                                         <button class="step-next-btn full-width-pink-btn">Next</button>
                                     </div>
@@ -103,115 +88,144 @@
 
                                 <div class="step-container step-container-2">
                                     <div class="step-feature-container">
-                                        <div class="form-field media-type-container">
-                                            <p>Select media type:</p>
-                                            <div id="media-type-container" class="selection-container">
-                                                <label class="selection-radio">
-                                                    <input type="radio" name="upload_method" required="" class="media-type-input" value="video">
-                                                    <div class="selection-text-container media-type__text-container">
-                                                        <div class="icon-container">
-                                                            <div class="svg-wrapper">
-                                                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                                                    <g id="SVGRepo_iconCarrier"> 
-                                                                        <rect width="24" height="24" fill="white"></rect> 
-                                                                        <path d="M21 16V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V18M21 16V4C21 3.44772 20.5523 3 20 3H4C3.44772 3 3 3.44772 3 4V18M21 16L15.4829 12.3219C15.1843 12.1228 14.8019 12.099 14.4809 12.2595L3 18" stroke="#000000" stroke-linejoin="round"></path> 
-                                                                        <circle cx="8" cy="9" r="2" stroke="#000000" stroke-linejoin="round"></circle> 
-                                                                    </g>
-                                                                </svg>
-                                                            </div>
-                                                        </div>
-                                                        <h3 class="selection-title media-type__title">Video</h3>
-                                                    </div>
-                                                    <span class="radio-placeholder"></span>
-                                                </label>
-                                                <label class="selection-radio">
-                                                    <input type="radio" name="upload_method" required="" class="media-type-input" value="gallery">
-                                                    <div class="selection-text-container media-type__text-container">
-                                                        <div class="icon-container">
-                                                            <div class="svg-wrapper">
-                                                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                                                    <g id="SVGRepo_iconCarrier"> 
-                                                                        <rect width="24" height="24" fill="white"></rect> 
-                                                                        <path d="M21 16V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V18M21 16V4C21 3.44772 20.5523 3 20 3H4C3.44772 3 3 3.44772 3 4V18M21 16L15.4829 12.3219C15.1843 12.1228 14.8019 12.099 14.4809 12.2595L3 18" stroke="#000000" stroke-linejoin="round"></path> 
-                                                                        <circle cx="8" cy="9" r="2" stroke="#000000" stroke-linejoin="round"></circle> 
-                                                                    </g>
-                                                                </svg>
-                                                            </div>
-                                                        </div>
-                                                        <h3 class="selection-title media-type__title">Gallery</h3>
-                                                    </div>
-                                                    <span class="radio-placeholder"></span>
-                                                </label>
-                                                <label class="selection-radio">
-                                                    <input type="radio" name="upload_method" required="" class="media-type-input" value="image">
-                                                    <div class="selection-text-container media-type__text-container">
-                                                        <div class="icon-container">
-                                                            <div class="svg-wrapper">
-                                                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                                                    <g id="SVGRepo_iconCarrier"> 
-                                                                        <rect width="24" height="24" fill="white"></rect> 
-                                                                        <path d="M21 16V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V18M21 16V4C21 3.44772 20.5523 3 20 3H4C3.44772 3 3 3.44772 3 4V18M21 16L15.4829 12.3219C15.1843 12.1228 14.8019 12.099 14.4809 12.2595L3 18" stroke="#000000" stroke-linejoin="round"></path> 
-                                                                        <circle cx="8" cy="9" r="2" stroke="#000000" stroke-linejoin="round"></circle> 
-                                                                    </g>
-                                                                </svg>
-                                                            </div>
-                                                        </div>
-                                                        <h3 class="selection-title media-type__title">Image</h3>
-                                                    </div>
-                                                    <span class="radio-placeholder"></span>
-                                                </label>
+                                        <div class="upload-form-container">
+                                            <div class="form-field media-type-container">
+                                                <p>Select media type:</p>
 
-                                                <button class="media-type-reset-btn UJQCM">Reset</button>
+                                                <div id="media-type-container" class="selection-container">
+                                                    <label class="selection-radio">
+                                                        <input type="radio" name="upload_method" required="" class="media-type-input" value="video">
+                                                        
+                                                        <div class="selection-text-container media-type__text-container">
+                                                            <div class="icon-container">
+                                                                <div class="svg-wrapper">
+                                                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                                                        <g id="SVGRepo_iconCarrier"> 
+                                                                            <rect width="24" height="24" fill="white"></rect> 
+                                                                            <path d="M21 16V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V18M21 16V4C21 3.44772 20.5523 3 20 3H4C3.44772 3 3 3.44772 3 4V18M21 16L15.4829 12.3219C15.1843 12.1228 14.8019 12.099 14.4809 12.2595L3 18" stroke="#000000" stroke-linejoin="round"></path> 
+                                                                            <circle cx="8" cy="9" r="2" stroke="#000000" stroke-linejoin="round"></circle> 
+                                                                        </g>
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+
+                                                            <h3 class="selection-title media-type__title">Video</h3>
+                                                        </div>
+
+                                                        <span class="radio-placeholder"></span>
+                                                    </label>
+
+                                                    <label class="selection-radio">
+                                                        <input type="radio" name="upload_method" required="" class="media-type-input" value="gallery">
+                                                        
+                                                        <div class="selection-text-container media-type__text-container">
+                                                            <div class="icon-container">
+                                                                <div class="svg-wrapper">
+                                                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                                                        <g id="SVGRepo_iconCarrier"> 
+                                                                            <rect width="24" height="24" fill="white"></rect> 
+                                                                            <path d="M21 16V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V18M21 16V4C21 3.44772 20.5523 3 20 3H4C3.44772 3 3 3.44772 3 4V18M21 16L15.4829 12.3219C15.1843 12.1228 14.8019 12.099 14.4809 12.2595L3 18" stroke="#000000" stroke-linejoin="round"></path> 
+                                                                            <circle cx="8" cy="9" r="2" stroke="#000000" stroke-linejoin="round"></circle> 
+                                                                        </g>
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+
+                                                            <h3 class="selection-title media-type__title">Gallery</h3>
+                                                        </div>
+
+                                                        <span class="radio-placeholder"></span>
+                                                    </label>
+
+                                                    <label class="selection-radio">
+                                                        <input type="radio" name="upload_method" required="" class="media-type-input" value="image">
+                                                        
+                                                        <div class="selection-text-container media-type__text-container">
+                                                            <div class="icon-container">
+                                                                <div class="svg-wrapper">
+                                                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                                                        <g id="SVGRepo_iconCarrier"> 
+                                                                            <rect width="24" height="24" fill="white"></rect> 
+                                                                            <path d="M21 16V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V18M21 16V4C21 3.44772 20.5523 3 20 3H4C3.44772 3 3 3.44772 3 4V18M21 16L15.4829 12.3219C15.1843 12.1228 14.8019 12.099 14.4809 12.2595L3 18" stroke="#000000" stroke-linejoin="round"></path> 
+                                                                            <circle cx="8" cy="9" r="2" stroke="#000000" stroke-linejoin="round"></circle> 
+                                                                        </g>
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+
+                                                            <h3 class="selection-title media-type__title">Image</h3>
+                                                        </div>
+
+                                                        <span class="radio-placeholder"></span>
+                                                    </label>
+    
+                                                    <button class="media-type-reset-btn UJQCM">Reset</button>
+                                                </div>
                                             </div>
+    
+                                            <form action="" class="upload-form">
+                                                <!-- image -->
+                                                <div class="upload-container upload-container-image">
+                                                    <button class="upload-button UJQCM">Select Image</button>
+
+                                                    <p class="upload-msg">
+                                                        Click the "Select Image" button or drag and drop a single image here
+                                                        (Max size: <span class="max-size">10MB</span>). Allowed formats:
+                                                        <span class="allowed-formats">JPEG, PNG</span>
+                                                    </p>
+                                                </div>
+    
+                                                <!-- gallery -->
+                                                <div class="upload-container upload-container-gallery">
+                                                    <button class="upload-button UJQCM">Select Images</button>
+
+                                                    <p class="upload-msg">
+                                                        Click the "Select Image" button or drag and drop a single image here
+                                                        (Max size: <span class="max-size">10MB</span>). Allowed formats:
+                                                        <span class="allowed-formats">JPEG, PNG</span>
+                                                    </p>
+                                                </div>
+    
+                                                <!-- videos -->
+                                                <div class="upload-container upload-container-video">
+                                                    <button class="upload-button UJQCM">Select Video</button>
+
+                                                    <p class="upload-msg">
+                                                        Click the "Select Video" button or drag and drop a single image here
+                                                        (Max size: <span class="max-size">100MB</span>). Allowed formats:
+                                                        <span class="allowed-formats">MP4, AVI, QUICKTIME, X-MATROSKA, X-MS-WMV, WEBM, OGG, JPEG, PNG</span>
+                                                    </p>
+                                                </div>
+                                            </form>
                                         </div>
-
-                                        <form action="">
-                                            <!-- image -->
-                                            <div class="upload-container upload-container-image">
-                                                <button type="button" class="upload-button UJQCM">Select Image</button>
-                                                <p class="upload-msg">
-                                                    Click the "Select Image" button or drag and drop a single image here
-                                                    (Max size: <span class="max-size">10MB</span>). Allowed formats:
-                                                    <span class="allowed-formats">JPEG, PNG</span>
-                                                </p>
-                                            </div>
-
-                                            <!-- gallery -->
-                                            <div class="upload-container upload-container-gallery">
-                                                <button type="button" class="upload-button UJQCM">Select Images</button>
-                                                <p class="upload-msg">
-                                                    Click the "Select Image" button or drag and drop a single image here
-                                                    (Max size: <span class="max-size">10MB</span>). Allowed formats:
-                                                    <span class="allowed-formats">JPEG, PNG</span>
-                                                </p>
-                                            </div>
-
-                                            <!-- videos -->
-                                            <div class="upload-container upload-container-video">
-                                                <button type="button" class="upload-button UJQCM">Select Video</button>
-                                                <p class="upload-msg">
-                                                    Click the "Select Video" button or drag and drop a single image here
-                                                    (Max size: <span class="max-size">100MB</span>). Allowed formats:
-                                                    <span class="allowed-formats">MP4, AVI, QUICKTIME, X-MATROSKA, X-MS-WMV, WEBM, OGG, JPEG, PNG</span>
-                                                </p>
-                                            </div>
-                                        </form>
-
                                         <div id="loader">
-                                            <div id="loader-number" class="tRLtc">0</div>
+                                            <div id="loader-number">0</div>
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: rgb(255, 255, 255); display: block; shape-rendering: auto;" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
-                                                <circle cx="50" cy="50" r="30" stroke="#f8f8f8" stroke-width="2" fill="none"/>
+                                                <circle cx="50" cy="50" r="30" stroke="#f8f8f8" stroke-width="2" fill="none"></circle>
                                                 <circle cx="50" cy="50" r="30" stroke="#ff8bfe" stroke-width="2" stroke-linecap="round" fill="none">
-                                                    <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1.4925373134328357s" values="0 50 50;180 50 50;720 50 50" keyTimes="0;0.5;1"/>
-                                                    <animate attributeName="stroke-dasharray" repeatCount="indefinite" dur="1.4925373134328357s" values="18.84955592153876 169.64600329384882;94.2477796076938 94.24777960769377;18.84955592153876 169.64600329384882" keyTimes="0;0.5;1"/>
+                                                    <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1.4925373134328357s" values="0 50 50;180 50 50;720 50 50" keyTimes="0;0.5;1"></animateTransform>
+                                                    <animate attributeName="stroke-dasharray" repeatCount="indefinite" dur="1.4925373134328357s" values="18.84955592153876 169.64600329384882;94.2477796076938 94.24777960769377;18.84955592153876 169.64600329384882" keyTimes="0;0.5;1"></animate>
                                                 </circle>
                                             </svg>
+                                        </div>
+                                        <div class="recieved-form-container">
+                                            <div class="recieve-file-container">
+                                                <div class="file-placeholder"></div>
+                                            </div>
+                                            <form action="#" method="post">
+                                                <label for="tag">Tag:</label>
+                                                <input type="text" id="tag" name="tag" required=""><br><br>
+                                                <label for="file-name">File Name:</label>
+                                                <input type="text" id="file-name" name="file-name" required=""><br><br>
+                                                <label for="description">Description:</label>
+                                                <input type="text" id="description" name="description" required=""><br><br>
+                                            </form>
                                         </div>
                                     </div>
                                     <div class="step-nav-btn-container">
@@ -224,6 +238,7 @@
                                     <div class="step-feature-container">
                                         <div class="form-field product-image">
                                             <label for="product_image">Thumbnail</label>
+
                                             <div data-upload-id="9318693136" class="thumbnail-container single-image-uploader" data-max="1" data-max-size="10" data-allowed-types="image/jpeg,image/png" data-uid="555123456789" data-resize="1" data-compress="1" data-name="product_image">
                                                 <div class="media-container sortable-container" data-select="1">
                                                     <div class="image-div " style="background-image: url(https://d3d9qpagvotra1.cloudfront.net/555123456789/images/Screenshot_142/Screenshot_142-src.png);">
@@ -269,12 +284,14 @@
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="btn-container" data-button-loader="1">
                                             <button class="kIHqU" aria-label="submit">
                                                 <span>Submit</span>
                                             </button>
                                         </div>
                                     </div>
+
                                     <div class="step-nav-btn-container">
                                         <button class="step-back-btn UJQCM">Back</button>
                                         <button class="step-next-btn UJQCM">Next</button>
@@ -286,6 +303,7 @@
                                         <!-- Subscription plans -->
                                         <div class="subscription-container">
                                             <p>Choose subscription tier:</p>
+
                                             <div id="subscription-tier-container" class="selection-container">
                                                 <label class="selection-radio">
                                                     <input type="radio" name="subscription-tier" required="" class="sub-tier-input" value="tier-1">
@@ -295,6 +313,7 @@
                                                     </div>
                                                     <span class="radio-placeholder"></span>
                                                 </label>
+
                                                 <label class="selection-radio">
                                                     <input type="radio" name="subscription-tier" required="" class="sub-tier-input" value="tier-2">
                                                     <div class="selection-text-container upload-method__text-container">
@@ -303,6 +322,7 @@
                                                     </div>
                                                     <span class="radio-placeholder"></span>
                                                 </label>
+                                                
                                                 <label class="selection-radio">
                                                     <input type="radio" name="subscription-tier" required="" class="sub-tier-input" value="tier-3">
                                                     <div class="selection-text-container upload-method__text-container">
@@ -317,34 +337,36 @@
                                         <!-- pay per view -->
                                         <div class="pay-per-view-container">
                                             <p>Submit the form to activate pay per view: </p>
+
                                             <form action="" method="post">
                                                 <label for="name">Name:</label>
-                                                <input type="text" id="name" name="name" required><br><br>
+                                                <input type="text" id="name" name="name" required=""><br><br>
                                         
                                                 <label for="email">Email:</label>
-                                                <input type="email" id="email" name="email" required><br><br>
+                                                <input type="email" id="email" name="email" required=""><br><br>
                                         
                                                 <label for="content_id">Content ID:</label>
-                                                <input type="text" id="content_id" name="content_id" required><br><br>
+                                                <input type="text" id="content_id" name="content_id" required=""><br><br>
                                         
                                                 <label for="payment_amount">Payment Amount (USD):</label>
-                                                <input type="number" id="payment_amount" name="payment_amount" step="0.01" required><br><br>
+                                                <input type="number" id="payment_amount" name="payment_amount" step="0.01" required=""><br><br>
                                         
                                                 <!-- Add additional fields as needed -->
                                         
                                                 <label for="card_number">Credit Card Number:</label>
-                                                <input type="text" id="card_number" name="card_number" required><br><br>
+                                                <input type="text" id="card_number" name="card_number" required=""><br><br>
                                         
                                                 <label for="expiration_date">Expiration Date:</label>
-                                                <input type="text" id="expiration_date" name="expiration_date" placeholder="MM/YY" required><br><br>
+                                                <input type="text" id="expiration_date" name="expiration_date" placeholder="MM/YY" required=""><br><br>
                                         
                                                 <label for="cvv">CVV:</label>
-                                                <input type="text" id="cvv" name="cvv" required><br><br>
+                                                <input type="text" id="cvv" name="cvv" required=""><br><br>
                                         
                                                 <input type="submit" value="Pay Now">
                                             </form>
                                         </div>
                                     </div>
+
                                     <div class="step-nav-btn-container">
                                         <button class="sub-btn UJQCM">Back</button>
                                         <button class="step-back-btn UJQCM">Back</button>
