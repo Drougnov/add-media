@@ -1,7 +1,8 @@
-let currentStep = 1;
-let totalSteps = 5;
-let uploadMethod = "both";
-let uploadedMediaType = "";
+var steps = [1, 2, 3, 4, 5];
+var currentStep = steps[0];
+var totalSteps = steps.length;
+var uploadMethod = "both";
+var uploadedMediaType = "";
 
 // ------------------------------------handle steps toggle--------------------------------------------------
 
@@ -24,8 +25,9 @@ function showStep(step) {
 // Go to the next step on next btn click
 document.querySelectorAll('.step-next-btn').forEach((nextButton) => {
     nextButton.addEventListener('click', () => {
-        if (currentStep < totalSteps) {
-            currentStep++;
+        const currentIndex = steps.indexOf(currentStep);
+        if (currentIndex < totalSteps - 1) {
+            currentStep = steps[currentIndex + 1];
             showStep(currentStep);
             toggleBtnVisiblity();
         }
@@ -35,8 +37,9 @@ document.querySelectorAll('.step-next-btn').forEach((nextButton) => {
 // Go to the previous step on back btn click
 document.querySelectorAll('.step-back-btn').forEach((backButton) => {
     backButton.addEventListener('click', () => {
-        if (currentStep > 1) {
-            currentStep--;
+        const currentIndex = steps.indexOf(currentStep);
+        if (currentIndex > 0) {
+            currentStep = steps[currentIndex - 1];
             showStep(currentStep);
             toggleBtnVisiblity();
         }
@@ -45,6 +48,27 @@ document.querySelectorAll('.step-back-btn').forEach((backButton) => {
 
 // Show the initial step
 showStep(currentStep);
+
+
+// ----------------------------------------------handle show thumbnail-----------------------------------------
+
+function showSteps(stepArray) {
+    steps = stepArray;
+    currentStep = steps[0];
+    showStep(currentStep);
+    console.log(steps);
+}
+
+const showDefaultStepsButton = document.getElementById('default-steps-btn');
+const showThumbnailStepsButton = document.getElementById('thumbnail-steps-btn');
+
+showDefaultStepsButton.addEventListener('click', () => {
+    showSteps([1, 2, 3, 4, 5]);
+});
+
+showThumbnailStepsButton.addEventListener('click', () => {
+    showSteps([2, 3, 5]);
+});
 
 
 // ------------------------------------handle upload method--------------------------------------------------
