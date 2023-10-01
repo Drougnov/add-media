@@ -71,31 +71,6 @@
     display: none;
 }
 
-.upload-form-container{
-    transform: translateX(0);
-    -webkit-transform: translateX(0);
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -o-transform: translateX(0);
-    transition: all .3s ease-in;
-    -webkit-transition: all .3s ease-in;
-    -moz-transition: all .3s ease-in;
-    -ms-transition: all .3s ease-in;
-    -o-transition: all .3s ease-in;
-}
-
-.upload-form-container.file-uploaded{
-    transform: translateX(-150%);
-    -webkit-transform: translateX(-150%);
-    -moz-transform: translateX(-150%);
-    -ms-transform: translateX(-150%);
-    -o-transform: translateX(-150%);
-}
-
-.recieved-form-container{
-    display: none;
-}
-
 .step-nav-btn-container{
     display: flex;
     justify-content: flex-end;
@@ -233,7 +208,7 @@ label.selection-radio .media-type__text-container{
     display: none;
 }
 
-.option-selected label{
+.option-selected > label{
     display: none;
 }
 
@@ -242,7 +217,7 @@ label.selection-radio .media-type__text-container{
 }
 
 .file-placeholder{
-    width: max-content;
+    max-width: max-content;
     min-height: 150px;
     border: 2px dashed #aaa;
     border-radius: 5px;
@@ -259,7 +234,7 @@ label.selection-radio .media-type__text-container{
     align-items: center;
     text-align: center;
     position: absolute;
-    top: calc(50% - 30px);    /* minus the buttons height */
+    top: calc(50% + 48px);    /* add extra or_divider margin */
     left: 50%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
@@ -299,10 +274,6 @@ label.selection-radio .media-type__text-container{
 }
 
 /* step 3 */
-.step-container-3 .step-feature-container{
-    position: relative;
-}
-
 .step-feature-overlay{
     position: absolute;
     width: 100%;
@@ -346,6 +317,76 @@ label.selection-radio .media-type__text-container{
     box-sizing: border-box;
     opacity: 1;
 }
+
+.upload-new-media-container{
+    position: relative;
+}
+
+.or_divider {
+	position: relative;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 13px;
+	color: grey;
+	max-width: 340px;
+	margin: 3rem auto;
+    display: none;
+}
+
+.upload-new-media-container.media-type-selected .or_divider{
+    display: flex;
+}
+
+.or_divider::after,
+.or_divider::before {
+	content: "";
+	display: block;
+	background: grey;
+	width: 100%;
+	height: 2px;
+}
+
+.or_divider::before {
+	margin-right: 10px;
+}
+
+.or_divider::after {
+	margin-left: 10px;
+}
+
+.upload-new-media__title{
+    display: none;
+}
+
+.upload-new-media-container.media-type-selected .upload-new-media__title{
+    display: block;
+}
+
+.upload-form-container{
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transition: all .3s ease-in;
+    -webkit-transition: all .3s ease-in;
+    -moz-transition: all .3s ease-in;
+    -ms-transition: all .3s ease-in;
+    -o-transition: all .3s ease-in;
+}
+
+.upload-form-container.file-uploaded{
+    transform: translateX(-150%);
+    -webkit-transform: translateX(-150%);
+    -moz-transform: translateX(-150%);
+    -ms-transform: translateX(-150%);
+    -o-transform: translateX(-150%);
+}
+
+.recieved-form-container{
+    display: none;
+}
+
 
 /* step 4 */
 .step-container-4 .step-feature-container{
