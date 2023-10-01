@@ -89,13 +89,34 @@ const showDefaultStepsButton = document.getElementById('default-steps-btn');
 const showThumbnailStepsButton = document.getElementById('thumbnail-steps-btn');
 
 showDefaultStepsButton.addEventListener('click', () => {
+    // Reset uploaded media type by default
+    uploadedMediaType = '';
+    toggleUploadContainers(uploadedMediaType);
+
     // Open the popup with default(all) step containers
     showStepsContainers([1, 2, 3, 4, 5]);
+
+    // Reset the back buttons visiblity
+    const backButtons = document.querySelectorAll('.step-back-btn');
+    backButtons.forEach(backBtn => {
+        backBtn.style.display = "block";
+    })
 });
 
 showThumbnailStepsButton.addEventListener('click', () => {
+    // Show thumbnail upload form by default
+    toggleUploadContainers('image');
+
     // Open the popup with specific step containers
-    showStepsContainers([2, 3, 5]);
+    showStepsContainers([3, 5]);
+
+    // Get first step's back button
+    let currentStepContainer = document.querySelector(`.step-container-${currentStep}`);
+    let currentStepBackButton = currentStepContainer.querySelector('.step-back-btn');
+    // Hide the button if exist
+    if(currentStepBackButton){
+        currentStepBackButton.style.display = "none";
+    }
 });
 
 
@@ -164,6 +185,7 @@ const mediaTypeResetBtn = document.querySelector('.media-type-reset-btn');
 // handle radio button click
 mediaTypeRadioButtons.forEach((radioButton) => {
     radioButton.addEventListener('change', function () {
+        // get selected radio value
         const selectedOption = this.value;
 
         // Update the uploaded media type
@@ -318,11 +340,16 @@ function hideAndResetLoader(){
 const uploadForm = document.querySelector('.upload-form');
 const recievedFormContainer = document.querySelector('.recieved-form-container');
 const filePlaceholderElement = document.querySelector('.file-placeholder');
+const uploadFormOverlay = document.querySelector('.step-feature-overlay');
 
 // Function to display the received file and perform necessary actions
 function showRecievedFile(){
     // Hide and reset the loader
     hideAndResetLoader();
+
+    // Hide the white overlay
+    uploadFormOverlay.style.display = "none";
+
     // Display the recieved file container
     recievedFormContainer.style.display = "block";
 }
@@ -359,6 +386,9 @@ uploadForm.addEventListener('submit', (e)=>{
 
     // Show spinner loader
     showLoader();
+
+    // Show white overlay
+    uploadFormOverlay.style.display = "block";
 
     // Simulate the process of getting a file
     getFile();
