@@ -88,87 +88,96 @@
 
                                 <div class="step-container step-container-2">
                                     <div class="step-feature-container">
-                                        <div class="upload-form-container">
-                                            <div class="form-field media-type-container">
-                                                <p>Select media type:</p>
+                                        <div class="form-field media-type-container">
+                                            <p>Select media type:</p>
 
-                                                <div id="media-type-container" class="selection-container">
-                                                    <label class="selection-radio">
-                                                        <input type="radio" name="upload_method" required="" class="media-type-input" value="video">
-                                                        
-                                                        <div class="selection-text-container media-type__text-container">
-                                                            <div class="icon-container">
-                                                                <div class="svg-wrapper">
-                                                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                                                        <g id="SVGRepo_iconCarrier"> 
-                                                                            <rect width="24" height="24" fill="white"></rect> 
-                                                                            <path d="M21 16V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V18M21 16V4C21 3.44772 20.5523 3 20 3H4C3.44772 3 3 3.44772 3 4V18M21 16L15.4829 12.3219C15.1843 12.1228 14.8019 12.099 14.4809 12.2595L3 18" stroke="#000000" stroke-linejoin="round"></path> 
-                                                                            <circle cx="8" cy="9" r="2" stroke="#000000" stroke-linejoin="round"></circle> 
-                                                                        </g>
-                                                                    </svg>
-                                                                </div>
+                                            <div id="media-type-container" class="selection-container">
+                                                <label class="selection-radio">
+                                                    <input type="radio" name="upload_media_type" required="" class="media-type-input" value="video">
+                                                    
+                                                    <div class="selection-text-container media-type__text-container">
+                                                        <div class="icon-container">
+                                                            <div class="svg-wrapper">
+                                                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                                                    <g id="SVGRepo_iconCarrier"> 
+                                                                        <rect width="24" height="24" fill="white"></rect> 
+                                                                        <path d="M21 16V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V18M21 16V4C21 3.44772 20.5523 3 20 3H4C3.44772 3 3 3.44772 3 4V18M21 16L15.4829 12.3219C15.1843 12.1228 14.8019 12.099 14.4809 12.2595L3 18" stroke="#000000" stroke-linejoin="round"></path> 
+                                                                        <circle cx="8" cy="9" r="2" stroke="#000000" stroke-linejoin="round"></circle> 
+                                                                    </g>
+                                                                </svg>
                                                             </div>
-
-                                                            <h3 class="selection-title media-type__title">Video</h3>
                                                         </div>
 
-                                                        <span class="radio-placeholder"></span>
-                                                    </label>
+                                                        <h3 class="selection-title media-type__title">Video</h3>
+                                                    </div>
 
-                                                    <label class="selection-radio">
-                                                        <input type="radio" name="upload_method" required="" class="media-type-input" value="gallery">
-                                                        
-                                                        <div class="selection-text-container media-type__text-container">
-                                                            <div class="icon-container">
-                                                                <div class="svg-wrapper">
-                                                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                                                        <g id="SVGRepo_iconCarrier"> 
-                                                                            <rect width="24" height="24" fill="white"></rect> 
-                                                                            <path d="M21 16V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V18M21 16V4C21 3.44772 20.5523 3 20 3H4C3.44772 3 3 3.44772 3 4V18M21 16L15.4829 12.3219C15.1843 12.1228 14.8019 12.099 14.4809 12.2595L3 18" stroke="#000000" stroke-linejoin="round"></path> 
-                                                                            <circle cx="8" cy="9" r="2" stroke="#000000" stroke-linejoin="round"></circle> 
-                                                                        </g>
-                                                                    </svg>
-                                                                </div>
+                                                    <span class="radio-placeholder"></span>
+                                                </label>
+
+                                                <label class="selection-radio">
+                                                    <input type="radio" name="upload_media_type" required="" class="media-type-input" value="gallery">
+                                                    
+                                                    <div class="selection-text-container media-type__text-container">
+                                                        <div class="icon-container">
+                                                            <div class="svg-wrapper">
+                                                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                                                    <g id="SVGRepo_iconCarrier"> 
+                                                                        <rect width="24" height="24" fill="white"></rect> 
+                                                                        <path d="M21 16V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V18M21 16V4C21 3.44772 20.5523 3 20 3H4C3.44772 3 3 3.44772 3 4V18M21 16L15.4829 12.3219C15.1843 12.1228 14.8019 12.099 14.4809 12.2595L3 18" stroke="#000000" stroke-linejoin="round"></path> 
+                                                                        <circle cx="8" cy="9" r="2" stroke="#000000" stroke-linejoin="round"></circle> 
+                                                                    </g>
+                                                                </svg>
                                                             </div>
-
-                                                            <h3 class="selection-title media-type__title">Gallery</h3>
                                                         </div>
 
-                                                        <span class="radio-placeholder"></span>
-                                                    </label>
+                                                        <h3 class="selection-title media-type__title">Gallery</h3>
+                                                    </div>
 
-                                                    <label class="selection-radio">
-                                                        <input type="radio" name="upload_method" required="" class="media-type-input" value="image">
-                                                        
-                                                        <div class="selection-text-container media-type__text-container">
-                                                            <div class="icon-container">
-                                                                <div class="svg-wrapper">
-                                                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                                                        <g id="SVGRepo_iconCarrier"> 
-                                                                            <rect width="24" height="24" fill="white"></rect> 
-                                                                            <path d="M21 16V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V18M21 16V4C21 3.44772 20.5523 3 20 3H4C3.44772 3 3 3.44772 3 4V18M21 16L15.4829 12.3219C15.1843 12.1228 14.8019 12.099 14.4809 12.2595L3 18" stroke="#000000" stroke-linejoin="round"></path> 
-                                                                            <circle cx="8" cy="9" r="2" stroke="#000000" stroke-linejoin="round"></circle> 
-                                                                        </g>
-                                                                    </svg>
-                                                                </div>
+                                                    <span class="radio-placeholder"></span>
+                                                </label>
+
+                                                <label class="selection-radio">
+                                                    <input type="radio" name="upload_media_type" required="" class="media-type-input" value="image">
+                                                    
+                                                    <div class="selection-text-container media-type__text-container">
+                                                        <div class="icon-container">
+                                                            <div class="svg-wrapper">
+                                                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                                                    <g id="SVGRepo_iconCarrier"> 
+                                                                        <rect width="24" height="24" fill="white"></rect> 
+                                                                        <path d="M21 16V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V18M21 16V4C21 3.44772 20.5523 3 20 3H4C3.44772 3 3 3.44772 3 4V18M21 16L15.4829 12.3219C15.1843 12.1228 14.8019 12.099 14.4809 12.2595L3 18" stroke="#000000" stroke-linejoin="round"></path> 
+                                                                        <circle cx="8" cy="9" r="2" stroke="#000000" stroke-linejoin="round"></circle> 
+                                                                    </g>
+                                                                </svg>
                                                             </div>
-
-                                                            <h3 class="selection-title media-type__title">Image</h3>
                                                         </div>
 
-                                                        <span class="radio-placeholder"></span>
-                                                    </label>
-    
-                                                    <button class="media-type-reset-btn UJQCM">Reset</button>
-                                                </div>
+                                                        <h3 class="selection-title media-type__title">Image</h3>
+                                                    </div>
+
+                                                    <span class="radio-placeholder"></span>
+                                                </label>
+
+                                                <button class="media-type-reset-btn UJQCM">Reset</button>
                                             </div>
-    
+                                        </div>
+                                    </div>
+                                    <div class="step-nav-btn-container">
+                                        <button class="step-back-btn UJQCM">Back</button>
+                                        <button class="step-next-btn UJQCM">Next</button>
+                                    </div>
+                                </div>
+
+                                <div class="step-container step-container-3">
+                                    <div class="step-feature-container">
+                                        <div class="step-feature-overlay"></div>
+                                        <div class="upload-form-container">
                                             <form action="" class="upload-form">
                                                 <!-- image -->
                                                 <div class="upload-container upload-container-image">
@@ -206,7 +215,7 @@
                                         </div>
                                         <div id="loader">
                                             <div id="loader-number">0</div>
-                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: rgb(255, 255, 255); display: block; shape-rendering: auto;" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; display: block; shape-rendering: auto;" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
                                                 <circle cx="50" cy="50" r="30" stroke="#f8f8f8" stroke-width="2" fill="none"></circle>
                                                 <circle cx="50" cy="50" r="30" stroke="#ff8bfe" stroke-width="2" stroke-linecap="round" fill="none">
                                                     <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1.4925373134328357s" values="0 50 50;180 50 50;720 50 50" keyTimes="0;0.5;1"></animateTransform>
@@ -227,15 +236,6 @@
                                                 <input type="text" id="description" name="description" required=""><br><br>
                                             </form>
                                         </div>
-                                    </div>
-                                    <div class="step-nav-btn-container">
-                                        <button class="step-back-btn UJQCM">Back</button>
-                                        <button class="step-next-btn UJQCM">Next</button>
-                                    </div>
-                                </div>
-
-                                <div class="step-container step-container-3">
-                                    <div class="step-feature-container">
                                         <div class="form-field product-image">
                                             <label for="product_image">Thumbnail</label>
 
