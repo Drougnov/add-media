@@ -161,6 +161,7 @@ toggleContainers();
 // ------------------------------------handle media type--------------------------------------------------
 
 const mediaTypeRadioButtons = document.querySelectorAll('.media-type-input');
+const uploadNewMediaContainer = document.querySelector('.upload-new-media-container');
 const uploadContainers = document.querySelectorAll('.upload-container');
 
 // Show/hide upload containers based on the selected media type
@@ -175,9 +176,15 @@ function toggleUploadContainers(selectedOption) {
     if (selectedUploadContainer) {
         selectedUploadContainer.style.display = 'block';
     }
-}
 
-toggleUploadContainers();
+    if(selectedOption){
+        // Add class if any option is selected (for styling)
+        uploadNewMediaContainer.classList.add('media-type-selected');
+    }else{
+        // Remove class if no option is selected/reset (for styling)
+        uploadNewMediaContainer.classList.remove('media-type-selected');
+    }
+}
 
 const mediaTypeContainer = document.getElementById('media-type-container');
 const mediaTypeResetBtn = document.querySelector('.media-type-reset-btn');
@@ -233,6 +240,9 @@ mediaTypeResetBtn.addEventListener('click', ()=>{
 
     //hide reset button
     mediaTypeResetBtn.style.display = "none";
+
+    // Remove class if no option is selected/reset (for styling)
+    uploadNewMediaContainer.classList.remove('media-type-selected');
 })
 
 
