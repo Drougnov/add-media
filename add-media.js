@@ -347,6 +347,7 @@ function hideAndResetLoader(){
 
 // ------------------------------------------handle-upload----------------------------------------------------
 
+
 const uploadForm = document.querySelector('.upload-form');
 const recievedFormContainer = document.querySelector('.recieved-form-container');
 const filePlaceholderElement = document.querySelector('.file-placeholder');
@@ -375,7 +376,7 @@ function getFile(){
     // Simulate getting files from a database with an interval
     let getFilesFromDataBase = setInterval(()=>{
         // Display a placeholder image (simulating receiving a file)
-        filePlaceholderElement.innerHTML = `<img src="https://plus.unsplash.com/premium_photo-1690350731538-57344931ac02?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEyOHxTNE1LTEFzQkI3NHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60" >`
+        filePlaceholderElement.style.backgroundImage = `url("https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60")`
 
         // Hide the upload form and show the received file
         uploadForm.parentElement.style.display = 'none';
@@ -391,8 +392,11 @@ uploadForm.addEventListener('submit', (e)=>{
     // stop page reloading on submit
     e.preventDefault();
 
-    // Add a class to indicate that a file has been uploaded
-    uploadForm.parentElement.classList.add('file-uploaded');
+    // Hide existing media container
+    document.querySelector('.existing-media-container').style.display = "none";
+
+    // Add a class to indicate that a file has been uploaded (for styling)
+    uploadNewMediaContainer.classList.add('file-uploaded');
 
     // Show spinner loader
     showLoader();
