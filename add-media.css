@@ -216,15 +216,6 @@ label.selection-radio .media-type__text-container{
     display: flex;
 }
 
-.file-placeholder{
-    max-width: max-content;
-    min-height: 150px;
-    border: 2px dashed #aaa;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
 /* loader */
 #loader {
     width: 200px;
@@ -234,7 +225,7 @@ label.selection-radio .media-type__text-container{
     align-items: center;
     text-align: center;
     position: absolute;
-    top: calc(50% + 48px);    /* add extra or_divider margin */
+    top: calc(50% + 20px);  /* add the section margin */
     left: 50%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
@@ -287,6 +278,7 @@ label.selection-radio .media-type__text-container{
     cursor: pointer;
 }
 
+/* existing-media-container */
 .thumbnail-container {
     border: 2px dashed #aaa;
     border-radius: 5px;
@@ -318,10 +310,12 @@ label.selection-radio .media-type__text-container{
     opacity: 1;
 }
 
+/* new-media-conatiner */
 .upload-new-media-container{
     position: relative;
 }
 
+/* or divider */
 .or_divider {
 	position: relative;
 	text-transform: uppercase;
@@ -335,6 +329,10 @@ label.selection-radio .media-type__text-container{
 
 .upload-new-media-container.media-type-selected .or_divider{
     display: flex;
+}
+
+.upload-new-media-container.file-uploaded .or_divider{
+    display: none;
 }
 
 .or_divider::after,
@@ -375,7 +373,7 @@ label.selection-radio .media-type__text-container{
     -o-transition: all .3s ease-in;
 }
 
-.upload-form-container.file-uploaded{
+.upload-new-media-container.file-uploaded .upload-form-container{
     transform: translateX(-150%);
     -webkit-transform: translateX(-150%);
     -moz-transform: translateX(-150%);
@@ -385,6 +383,24 @@ label.selection-radio .media-type__text-container{
 
 .recieved-form-container{
     display: none;
+    border: 2px dashed #aaa;
+    padding: 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+/* recieved file placeholder */
+.file-placeholder{
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
 }
 
 
