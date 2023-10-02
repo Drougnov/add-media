@@ -271,6 +271,7 @@ label.selection-radio .media-type__text-container{
 }
 
 /* step 3 */
+
 .step-feature-overlay{
     position: absolute;
     width: 100%;
@@ -321,6 +322,10 @@ label.selection-radio .media-type__text-container{
     position: relative;
 }
 
+.upload-new-media-container.file-uploaded{
+    min-height: 300px;
+}
+
 /* or divider */
 .or_divider {
 	position: relative;
@@ -364,27 +369,6 @@ label.selection-radio .media-type__text-container{
 
 .upload-new-media-container.media-type-selected .upload-new-media__title{
     display: block;
-}
-
-.upload-form-container{
-    transform: translateX(0);
-    -webkit-transform: translateX(0);
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -o-transform: translateX(0);
-    transition: all .3s ease-in;
-    -webkit-transition: all .3s ease-in;
-    -moz-transition: all .3s ease-in;
-    -ms-transition: all .3s ease-in;
-    -o-transition: all .3s ease-in;
-}
-
-.upload-new-media-container.file-uploaded .upload-form-container{
-    transform: translateX(-150%);
-    -webkit-transform: translateX(-150%);
-    -moz-transform: translateX(-150%);
-    -ms-transform: translateX(-150%);
-    -o-transform: translateX(-150%);
 }
 
 .recieved-form-container{
