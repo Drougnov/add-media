@@ -218,8 +218,8 @@ label.selection-radio .media-type__text-container{
 
 /* loader */
 #loader {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -227,6 +227,7 @@ label.selection-radio .media-type__text-container{
     position: absolute;
     top: calc(50% + 20px);  /* add the section margin */
     left: 50%;
+    padding-bottom: 20px;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
@@ -247,11 +248,16 @@ label.selection-radio .media-type__text-container{
 
 #loader svg {
     position: absolute;
-    top: 0;
-    right: 0;
     width: 200px;
     height: 200px;
     transform: rotateY(-180deg) rotateZ(-90deg);
+}
+
+#loader .loader-text{
+    position: absolute;
+    bottom: 20px;
+    font-size: 13px;
+    display: none;
 }
 
 
