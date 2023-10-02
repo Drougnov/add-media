@@ -365,14 +365,8 @@ function showRecievedFile(){
     recievedFormContainer.style.display = "block";
 }
 
-// Function to simulate getting a file from a database (demo)
-function getFile(){
-    // Set a duration for simulating the process of getting a file (3 seconds)
-    let gettingFileDuration = 3000;
-
-    // Start the loader countdown
-    startloaderCountDown(gettingFileDuration);
-
+function startAwsProcessing(){
+    let processingFileDuration = 2000;
     // Simulate getting files from a database with an interval
     let getFilesFromDataBase = setInterval(()=>{
         // Display a placeholder image (simulating receiving a file)
@@ -384,7 +378,33 @@ function getFile(){
 
         // Clear the interval after receiving the file
         clearInterval(getFilesFromDataBase);
-    }, gettingFileDuration);
+    }, processingFileDuration);
+}
+
+// Function to simulate getting a file from a database (demo)
+function startUploading(){
+    // Set a duration for simulating the process of uploading a file (2 seconds)
+    let uploadingFileDuration = 2000;
+
+    // Start the loader countdown
+    startloaderCountDown(uploadingFileDuration);
+
+    // Simulate the uploading process
+    setTimeout(() => {
+        // Simulate the completion of the upload after 2 seconds
+        console.log("Upload completed");
+
+        // Show loader processing text
+        document.querySelector('.loader-text').style.display = "block";
+        
+        // Preload the image and move on to AWS processing
+        const image = new Image();
+        image.src = "https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60";
+        image.onload = function() {
+            // Once the image is loaded, you can display it after AWS processing
+            startAwsProcessing();
+        };
+    }, uploadingFileDuration);
 }
 
 // On uploading media (submitting form)
@@ -405,5 +425,5 @@ uploadForm.addEventListener('submit', (e)=>{
     uploadFormOverlay.style.display = "block";
 
     // Simulate the process of getting a file
-    getFile();
+    startUploading();
 })
