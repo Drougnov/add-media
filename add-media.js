@@ -1,3 +1,5 @@
+const popup = document.getElementById("add-media-popup");
+
 // Default step container's number
 var steps = [1, 2, 3, 4, 5];
 
@@ -104,6 +106,9 @@ showDefaultStepsButton.addEventListener("click", () => {
 });
 
 showThumbnailStepsButton.addEventListener("click", () => {
+    // add class to the popup (for styling)
+    popup.classList.add("showing-thumbnail");
+
     // Show thumbnail upload form by default
     toggleUploadContainers("image");
 
@@ -167,6 +172,7 @@ const uploadContainers = document.querySelectorAll(".upload-container");
 
 // Show/hide upload containers based on the selected media type
 function toggleUploadContainers(selectedOption) {
+    console.log(selectedOption);
     // Hide all upload containers
     uploadContainers.forEach((container) => {
         container.style.display = "none";
@@ -186,6 +192,16 @@ function toggleUploadContainers(selectedOption) {
     } else {
         // Remove class if no option is selected/reset (for styling)
         uploadNewMediaContainer.classList.remove("media-type-selected");
+    }
+
+    // Show video related checkbox container if video is selected
+    const videoPreviewCheckboxContainer = document.querySelector(
+        ".video-preview-settings-container"
+    );
+    if (selectedOption === "video") {
+        videoPreviewCheckboxContainer.style.display = "block";
+    } else {
+        videoPreviewCheckboxContainer.style.display = "none";
     }
 }
 
@@ -487,6 +503,7 @@ function resetEverything() {
     recievedFormContainer.style.display = "none";
 
     // remove styling class
+    popup.classList.remove("showing-thumbnail");
     uploadNewMediaContainer.classList.remove("file-uploaded");
 }
 
@@ -506,5 +523,33 @@ const closeButtonElements = targetElement.querySelectorAll(`.AYaOY`);
 closeButtonElements.forEach(function (element) {
     element.addEventListener("click", function () {
         resetEverything();
+    });
+});
+
+// ------------------------------------------------handle display settings chekboxes----------------------------------------------------
+
+const displaySettingsCheckboxes = document.querySelectorAll(
+    '.display-settings-label input[type="checkbox"]'
+);
+const displayPrivateCheckbox = document.getElementById("display-private");
+
+displaySettingsCheckboxes.forEach((checkBox) => {
+    checkBox.addEventListener("change", () => {
+        if (checkBox.value !== "private") {
+            // If any checkbox with a value other than 'private' is checked,
+            // uncheck the 'Private' checkbox
+            if (displayPrivateCheckbox.checked) {
+                displayPrivateCheckbox.checked = false;
+            }
+        } else if (checkBox === displayPrivateCheckbox) {
+            // If the 'Private' checkbox is checked, uncheck all other checkboxes
+            if (checkBox.checked) {
+                displaySettingsCheckboxes.forEach((otherCheckbox) => {
+                    if (otherCheckbox !== checkBox) {
+                        otherCheckbox.checked = false;
+                    }
+                });
+            }
+        }
     });
 });
