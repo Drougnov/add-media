@@ -1,7 +1,7 @@
 const popup = document.getElementById("add-media-popup");
 
 // Default step container's number
-var steps = [1, 2, 3, 4, 5];
+var steps = [1, 2, 3, 4, 5, 6];
 
 // SEt the first step as current step
 var currentStep = steps[0];
@@ -96,7 +96,7 @@ showDefaultStepsButton.addEventListener("click", () => {
     toggleUploadContainers(uploadedMediaType);
 
     // Open the popup with default(all) step containers
-    showStepsContainers([1, 2, 3, 4, 5]);
+    showStepsContainers([1, 2, 3, 4, 5, 6]);
 
     // Reset the back buttons visiblity
     const backButtons = document.querySelectorAll(".step-back-btn");
@@ -113,7 +113,7 @@ showThumbnailStepsButton.addEventListener("click", () => {
     toggleUploadContainers("image");
 
     // Open the popup with specific step containers
-    showStepsContainers([3, 5]);
+    showStepsContainers([3, 6]);
 
     // Get first step's back button
     let currentStepContainer = document.querySelector(
@@ -462,9 +462,8 @@ uploadForm.addEventListener("submit", (e) => {
 // -----------------------------------------handle reset on close------------------------------------------
 
 function resetEverything() {
-    console.log("reset");
     // reset variables
-    steps = [1, 2, 3, 4, 5];
+    steps = [1, 2, 3, 4, 5, 6];
     currentStep = steps[0];
     totalSteps = steps.length;
     uploadMethod = "both";
