@@ -426,3 +426,12 @@ label.selection-radio .media-type__text-container {
     flex-direction: column;
     gap: 40px;
 }
+
+/* step 5 */
+.step-container-5 .step-next-btn {
+    display: block;
+}
+
+.showing-thumbnail .step-container-5 .step-next-btn {
+    display: none;
+}
