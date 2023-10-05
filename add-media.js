@@ -1,10 +1,22 @@
 // Define constants and variables
-const popup = document.getElementById("add-media-popup"); // Get a reference to the 'add-media-popup' element
-let steps = [1, 2, 3, 4, 5, 6]; // Define an array to represent the steps
-let currentStep = steps[0]; // Initialize the current step to the first step
-var totalSteps = steps.length; // Calculate the total number of steps
-let uploadMethod = "both"; // Set the default upload method to "both"
-let uploadedMediaType = ""; // Initialize the uploaded media type as empty
+const popup = document.getElementById("add-media-popup");
+
+// Default step container's number
+let steps = [1, 2, 3, 4, 5, 6];
+
+// Set the first step as current step
+let currentStep = steps[0];
+
+// Get the total number of steps
+var totalSteps = steps.length;
+
+// Set "both" as default value for uploadMethod (show both subscription and ppv details)
+let uploadMethod = "both";
+
+// Set default media type (none selected as default)
+let uploadedMediaType = "";
+
+// ------------------------------------handle steps toggle--------------------------------------------------
 
 // Function to hide all step containers
 function hideAllStepContainers() {
@@ -16,48 +28,67 @@ function hideAllStepContainers() {
 
 // Function to update and display the current step and progress bar
 function updateStepAndProgressBar(currentStep) {
-    hideAllStepContainers(); // Hide all step containers
+    // Hide all step containers
+    hideAllStepContainers();
+
+    // Display the current step container
     document.querySelector(`.step-container-${currentStep}`).style.display =
-        "flex"; // Display the current step container
-    const progressBar = document.querySelector(".progress-bar"); // Get the progress bar element
-    const currentIndex = steps.indexOf(currentStep); // Find the index of the current step in the steps array
-    const progressWidth = (currentIndex / (steps.length - 1)) * 100; // Calculate the width of the progress bar
-    progressBar.style.width = `${progressWidth}%`; // Set the width of the progress bar
+        "flex";
+    const progressBar = document.querySelector(".progress-bar");
+
+    // Find the index of the current step in the steps array
+    const currentIndex = steps.indexOf(currentStep);
+
+    // Calculate the width of the progress bar
+    const progressWidth = (currentIndex / (steps.length - 1)) * 100;
+
+    // Set the width of the progress bar
+    progressBar.style.width = `${progressWidth}%`;
 }
 
 // Function to navigate to the next step
 function goToNextStep() {
-    const currentIndex = steps.indexOf(currentStep); // Find the index of the current step in the steps array
+    // Find the index of the current step in the steps array
+    const currentIndex = steps.indexOf(currentStep);
+
+    // Check if it's not the last step
     if (currentIndex < totalSteps - 1) {
-        // Check if it's not the last step
-        currentStep = steps[currentIndex + 1]; // Move to the next step
-        updateStepAndProgressBar(currentStep, totalSteps); // Update and display the next step and progress bar
-        toggleBtnVisiblity(); // Call a function to toggle button visibility (not defined in this code)
+        // Move to the next step
+        currentStep = steps[currentIndex + 1];
+
+        // Display the step and step-4 buttons
+        updateStepAndProgressBar(currentStep, totalSteps);
+        toggleBtnVisiblity();
     }
 }
 
 // Function to navigate to the previous step
 function goToPreviousStep() {
-    const currentIndex = steps.indexOf(currentStep); // Find the index of the current step in the steps array
+    // Find the index of the current step in the steps array
+    const currentIndex = steps.indexOf(currentStep);
+
+    // Check if it's not the first step
     if (currentIndex > 0) {
-        // Check if it's not the first step
-        currentStep = steps[currentIndex - 1]; // Move to the previous step
-        updateStepAndProgressBar(currentStep, totalSteps); // Update and display the previous step and progress bar
-        toggleBtnVisiblity(); // Call a function to toggle button visibility (not defined in this code)
+        // Move to the previous step
+        currentStep = steps[currentIndex - 1];
+
+        // Display the step and step-4 buttons
+        updateStepAndProgressBar(currentStep, totalSteps);
+        toggleBtnVisiblity();
     }
 }
 
-// Event listeners for next and back buttons
+// Call functions on click of next and back buttons
 document.querySelectorAll(".step-next-btn").forEach((nextButton) => {
-    nextButton.addEventListener("click", goToNextStep); // Listen for click events on next buttons
+    nextButton.addEventListener("click", goToNextStep);
 });
 
 document.querySelectorAll(".step-back-btn").forEach((backButton) => {
-    backButton.addEventListener("click", goToPreviousStep); // Listen for click events on back buttons
+    backButton.addEventListener("click", goToPreviousStep);
 });
 
 // Show the initial step
-updateStepAndProgressBar(currentStep, totalSteps); // Display the initial step and progress bar
+updateStepAndProgressBar(currentStep, totalSteps);
 
 // Function to show specific step containers
 function showStepsContainers(stepArray) {
@@ -71,25 +102,38 @@ const showDefaultStepsButton = document.getElementById("default-steps-btn");
 const showThumbnailStepsButton = document.getElementById("thumbnail-steps-btn");
 
 showDefaultStepsButton.addEventListener("click", () => {
-    uploadedMediaType = ""; // Reset the uploaded media type
-    toggleUploadContainers(uploadedMediaType); // Call a function to toggle upload containers (not defined in this code)
-    showStepsContainers([1, 2, 3, 4, 5, 6]); // Show all steps for the default scenario
+    // Reset uploaded media type by default
+    uploadedMediaType = "";
+    toggleUploadContainers(uploadedMediaType);
+
+    // Open the popup with default(all) step containers
+    showStepsContainers([1, 2, 3, 4, 5, 6]);
+
+    // Reset the back buttons visiblity
     document.querySelectorAll(".step-back-btn").forEach((backBtn) => {
-        backBtn.style.display = "block"; // Display back buttons for all steps
+        backBtn.style.display = "block";
     });
 });
 
 showThumbnailStepsButton.addEventListener("click", () => {
-    popup.classList.add("showing-thumbnail"); // Add a CSS class to the popup element for styling
-    toggleUploadContainers("image"); // Call a function to toggle upload containers with "image" media type (not defined in this code)
-    showStepsContainers([3, 5]); // Show only steps 3 and 5
+    // add class to the popup (for styling)
+    popup.classList.add("showing-thumbnail");
+
+    // Show thumbnail upload form by default
+    toggleUploadContainers("image");
+
+    // Open the popup with specific step containers
+    showStepsContainers([3, 5]);
+
+    // Get first step's back button
     const currentStepContainer = document.querySelector(
         `.step-container-${currentStep}`
     );
     const currentStepBackButton =
         currentStepContainer.querySelector(".step-back-btn");
+    // Hide the button if exist
     if (currentStepBackButton) {
-        currentStepBackButton.style.display = "none"; // Hide the back button for the current step if it exists
+        currentStepBackButton.style.display = "none";
     }
 });
 
