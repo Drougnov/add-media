@@ -142,7 +142,7 @@ editSettingsButton.addEventListener("click", () => {
     toggleUploadContainers("");
 
     // Open the popup with specific step containers
-    showStepsContainers([1, 3, 4, 5, 6]);
+    showStepsContainers([1, 4, 5, 6]);
 });
 
 // ------------------------------------handle upload method--------------------------------------------------
