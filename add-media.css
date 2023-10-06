@@ -421,17 +421,46 @@ label.selection-radio .media-type__text-container {
 }
 
 /* step 4 */
-.step-container-4 .step-feature-container {
+.video-config-container {
+    border: 2px dashed #aaa;
+    padding: 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.videos_trailer_preview,
+.videos_thumbnail_preview,
+.videos_source_preview {
+    margin-top: 8px;
+    margin-bottom: 32px;
+}
+
+.videos_thumbnail_preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-gap: 5px;
+}
+
+.upload-own-trailer-input {
+    display: block !important;
+    margin-bottom: 16px;
+}
+
+/* step 5 */
+.step-container-5 .step-feature-container {
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
-/* step 5 */
-.step-container-5 .step-next-btn {
+/* step 6 */
+.step-container-6 .step-next-btn {
     display: block;
 }
 
-.showing-thumbnail .step-container-5 .step-next-btn {
+.showing-thumbnail .step-container-6 .step-next-btn {
     display: none;
 }
