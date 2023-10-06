@@ -97,14 +97,14 @@ function showStepsContainers(stepArray) {
     updateStepAndProgressBar(currentStep, totalSteps); // Display the current step and progress bar
 }
 
-// Event listeners for default and thumbnail steps buttons
+// Event listeners for popup opener buttons
 const showDefaultStepsButton = document.getElementById("default-steps-btn");
 const showThumbnailStepsButton = document.getElementById("thumbnail-steps-btn");
+const editSettingsButton = document.getElementById("edit-settings-btn");
 
 showDefaultStepsButton.addEventListener("click", () => {
     // Reset uploaded media type by default
-    uploadedMediaType = "";
-    toggleUploadContainers(uploadedMediaType);
+    toggleUploadContainers("");
 
     // Open the popup with default(all) step containers
     showStepsContainers([1, 2, 3, 4, 5, 6]);
@@ -135,6 +135,14 @@ showThumbnailStepsButton.addEventListener("click", () => {
     if (currentStepBackButton) {
         currentStepBackButton.style.display = "none";
     }
+});
+
+editSettingsButton.addEventListener("click", () => {
+    // Reset uploaded media type by default
+    toggleUploadContainers("");
+
+    // Open the popup with specific step containers
+    showStepsContainers([1, 3, 4, 5, 6]);
 });
 
 // ------------------------------------handle upload method--------------------------------------------------
