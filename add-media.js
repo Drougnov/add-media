@@ -2,7 +2,7 @@
 const popup = document.getElementById("add-media-popup");
 
 // Default step container's number
-let steps = [1, 2, 3, 4, 5, 6];
+let steps = [1, 2, 3, 4, 5, 6, 7];
 
 // Set the first step as current step
 let currentStep = steps[0];
@@ -56,7 +56,7 @@ function goToNextStep() {
         // Move to the next step
         currentStep = steps[currentIndex + 1];
 
-        // Display the step and step-4 buttons
+        // Display the step and step-5 buttons
         updateStepAndProgressBar(currentStep, totalSteps);
         toggleBtnVisiblity();
     }
@@ -72,7 +72,7 @@ function goToPreviousStep() {
         // Move to the previous step
         currentStep = steps[currentIndex - 1];
 
-        // Display the step and step-4 buttons
+        // Display the step and step-5 buttons
         updateStepAndProgressBar(currentStep, totalSteps);
         toggleBtnVisiblity();
     }
@@ -107,7 +107,7 @@ showDefaultStepsButton.addEventListener("click", () => {
     toggleUploadContainers("");
 
     // Open the popup with default(all) step containers
-    showStepsContainers([1, 2, 3, 4, 5, 6]);
+    showStepsContainers([1, 2, 3, 4, 5, 6, 7]);
 
     // Reset the back buttons visiblity
     document.querySelectorAll(".step-back-btn").forEach((backBtn) => {
@@ -123,7 +123,7 @@ showThumbnailStepsButton.addEventListener("click", () => {
     toggleUploadContainers("image");
 
     // Open the popup with specific step containers
-    showStepsContainers([3, 5]);
+    showStepsContainers([3, 6]);
 
     // Get first step's back button
     const currentStepContainer = document.querySelector(
@@ -142,7 +142,7 @@ editSettingsButton.addEventListener("click", () => {
     toggleUploadContainers("");
 
     // Open the popup with specific step containers
-    showStepsContainers([1, 4, 5, 6]);
+    showStepsContainers([1, 5, 6, 7]);
 });
 
 // ------------------------------------handle upload method--------------------------------------------------
@@ -285,44 +285,44 @@ mediaTypeResetBtn.addEventListener("click", () => {
 
 const subscriptionBtn = document.querySelector(".sub-btn");
 const pvpBtn = document.querySelector(".pvp-btn");
-const stepFourNextBtn = document.querySelector(
-    ".step-container-4 .step-next-btn"
+const stepFiveNextBtn = document.querySelector(
+    ".step-container-5 .step-next-btn"
 );
-const stepFourBackBtn = document.querySelector(
-    ".step-container-4 .step-back-btn"
+const stepFiveBackBtn = document.querySelector(
+    ".step-container-5 .step-back-btn"
 );
 
 // On step four show/hide the extra buttons
 function toggleBtnVisiblity() {
-    // If upload method is selected both and user on the step 4 subscription container
+    // If upload method is selected both and user on the step 5 subscription container
     if (
         uploadMethod == "both" &&
-        currentStep == 4 &&
+        currentStep == 5 &&
         subscriptionContainer.style.display == "block"
     ) {
         // show go-step-back button and show-pvp-form-button and hide others
         subscriptionBtn.style.display = "none";
-        stepFourBackBtn.style.display = "block";
+        stepFiveBackBtn.style.display = "block";
         pvpBtn.style.display = "block";
-        stepFourNextBtn.style.display = "none";
+        stepFiveNextBtn.style.display = "none";
 
-        // If upload method is selected both and user on the step 4 pvp container
+        // If upload method is selected both and user on the step 5 pvp container
     } else if (
         uploadMethod == "both" &&
-        currentStep == 4 &&
+        currentStep == 5 &&
         payPerViewContainer.style.display == "block"
     ) {
         // show go-step-next button and show-subscription-tier-button and hide others
         subscriptionBtn.style.display = "block";
-        stepFourBackBtn.style.display = "none";
+        stepFiveBackBtn.style.display = "none";
         pvpBtn.style.display = "none";
-        stepFourNextBtn.style.display = "block";
+        stepFiveNextBtn.style.display = "block";
     } else {
         // show default buttons (step back and step next)
         subscriptionBtn.style.display = "none";
-        stepFourBackBtn.style.display = "block";
+        stepFiveBackBtn.style.display = "block";
         pvpBtn.style.display = "none";
-        stepFourNextBtn.style.display = "block";
+        stepFiveNextBtn.style.display = "block";
     }
 }
 
@@ -481,7 +481,7 @@ uploadForm.addEventListener("submit", (e) => {
 
 function resetEverything() {
     // reset variables
-    steps = [1, 2, 3, 4, 5, 6];
+    steps = [1, 2, 3, 4, 5, 6, 7];
     currentStep = steps[0];
     totalSteps = steps.length;
     uploadMethod = "both";
